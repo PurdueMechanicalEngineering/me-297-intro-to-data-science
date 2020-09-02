@@ -6,20 +6,6 @@ This is an experimental course that will likely evolve into a requirement for al
 
 The material is published under the GNU General Public License. You can reuse it in your own courses as soon as you also include the same license and cite this repository. Please send me an email if you do as I would love to know!
 
-## Basic Python Tutorials
-
-+ [Python Basics Activity 1 (Python as a calculator)](https://colab.research.google.com/github/PurdueMechanicalEngineering/me-297-intro-to-data-science/blob/master/activities/python-basics-1.ipynb)
-+ [Python Basics Activity 2 (Python variables and types)](https://colab.research.google.com/github/PurdueMechanicalEngineering/me-297-intro-to-data-science/blob/master/activities/python-basics-2.ipynb)
-+ [Python Basics Activity 3 (Basic tuples and lists)](https://colab.research.google.com/github/PurdueMechanicalEngineering/me-297-intro-to-data-science/blob/master/activities/python-basics-3.ipynb)
-+ [Python Basics Activity 4 (Basics of strings and printing)](https://colab.research.google.com/github/PurdueMechanicalEngineering/me-297-intro-to-data-science/blob/master/activities/python-basics-4.ipynb)
-+ [Python Basics Activity 5 (Conditionals)](https://colab.research.google.com/github/PurdueMechanicalEngineering/me-297-intro-to-data-science/blob/master/activities/python-basics-5.ipynb)
-+ [Python Basics Activity 6 (Loops)](https://colab.research.google.com/github/PurdueMechanicalEngineering/me-297-intro-to-data-science/blob/master/activities/python-basics-6.ipynb)
-+ [Python Basics Activity 7 (Functions)](https://colab.research.google.com/github/PurdueMechanicalEngineering/me-297-intro-to-data-science/blob/master/activities/python-basics-7.ipynb)
-+ [Python Basics Activity 8 (Classes)](https://colab.research.google.com/github/PurdueMechanicalEngineering/me-297-intro-to-data-science/blob/master/activities/python-basics-8.ipynb)
-+ [Python Basics Activity 9 (Numpy arrays and linear algebra)](https://colab.research.google.com/github/PurdueMechanicalEngineering/me-297-intro-to-data-science/blob/master/activities/python-basics-9.ipynb)
-+ [Python Basics Activity 10 (The Python data analysis library)](https://colab.research.google.com/github/PurdueMechanicalEngineering/me-297-intro-to-data-science/blob/master/activities/python-basics-10.ipynb)
-+ [Python Basics Activity 11 (Basic plotting)](https://colab.research.google.com/github/PurdueMechanicalEngineering/me-297-intro-to-data-science/blob/master/activities/python-basics-11.ipynb)
-
 ## Lecture Notebooks
 
 Below, I provide links that open up directly on [Google Colab](https://colab.research.google.com/notebooks/welcome.ipynb).
