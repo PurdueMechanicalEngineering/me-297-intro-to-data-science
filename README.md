@@ -1,4 +1,6 @@
-# ME 297 - Introduction to Data Science for Mechanical Engineers
+# ME 297 - Introduction to Data Science for Mechanical Engineers - Fall 2020
+
+**Note:** This is the version of the class as taught during Fall 2020.
 
 This is the handout and homework repository for the course "ME 297 Introduction to Data Science for Mechanical Engineers" which is currently taught (Fall 2020) by Prof. [Ilias Bilionis](https://www.predictivesciencelab.org/authors/ebilionis/) at Purdue University.
 The course is fully online with the videos being accessible through [Brightspace](https://purdue.brightspace.com/).
