@@ -25,13 +25,13 @@ If you want to view the Jupyter notebooks locally, please see the section named 
   - [Hands-on Activity 1.6 (Basics of strings and printing)](https://colab.research.google.com/github/PurdueMechanicalEngineering/me-297-intro-to-data-science/blob/master/activities/hands-on-01.6.ipynb)
   - [Hands-on Activity 1.7 (Conditionals)](https://colab.research.google.com/github/PurdueMechanicalEngineering/me-297-intro-to-data-science/blob/master/activities/hands-on-01.7.ipynb)
   - [Hands-on Activity 1.8 (Loops)](https://colab.research.google.com/github/PurdueMechanicalEngineering/me-297-intro-to-data-science/blob/master/activities/hands-on-01.8.ipynb)
+  - [Hands-on Activity 1.9 (Functions)](https://colab.research.google.com/github/PurdueMechanicalEngineering/me-297-intro-to-data-science/blob/master/activities/hands-on-01.9.ipynb)
 
 + Lecture 2 - Advanced Python Concepts
-  - [Hands-on Activity 2.1 (Functions)](https://colab.research.google.com/github/PurdueMechanicalEngineering/me-297-intro-to-data-science/blob/master/activities/hands-on-02.1.ipynb)
-  - [Python Basics Activity 8 (Classes)](https://colab.research.google.com/github/PurdueMechanicalEngineering/me-297-intro-to-data-science/blob/master/activities/hands-on-02.2.ipynb)
-  - [Python Basics Activity 9 (Numpy arrays and linear algebra)](https://colab.research.google.com/github/PurdueMechanicalEngineering/me-297-intro-to-data-science/blob/master/activities/hands-on-02.2.ipynb)
-  - [Python Basics Activity 10 (The Python data analysis library)](https://colab.research.google.com/github/PurdueMechanicalEngineering/me-297-intro-to-data-science/blob/master/activities/hands-on-02.3.ipynb)
-  - [Python Basics Activity 11 (Basic plotting)](https://colab.research.google.com/github/PurdueMechanicalEngineering/me-297-intro-to-data-science/blob/master/activities/hands-on-02.4.ipynb)
+  - [Python Basics Activity 2.1 (Classes)](https://colab.research.google.com/github/PurdueMechanicalEngineering/me-297-intro-to-data-science/blob/master/activities/hands-on-02.1.ipynb)
+  - [Python Basics Activity 2.2 (Numpy arrays and linear algebra)](https://colab.research.google.com/github/PurdueMechanicalEngineering/me-297-intro-to-data-science/blob/master/activities/hands-on-02.2.ipynb)
+  - [Python Basics Activity 2.3 (The Python data analysis library)](https://colab.research.google.com/github/PurdueMechanicalEngineering/me-297-intro-to-data-science/blob/master/activities/hands-on-02.3.ipynb)
+  - [Python Basics Activity 2.4 (Basic plotting)](https://colab.research.google.com/github/PurdueMechanicalEngineering/me-297-intro-to-data-science/blob/master/activities/hands-on-02.4.ipynb)
 
 + Lecture 3 - Basics of Probability Theory
 
