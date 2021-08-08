@@ -1,0 +1,134 @@
+# in _toc.yml
+format: jb-book
+root: index
+chapters:
+  - file: lecture01/intro
+    sections:
+    - file: lecture01/what-is-data-science
+    - file: lecture01/cool-applications
+    - file: lecture01/python-intro
+    - file: lecture01/python-expressions
+    - file: lecture01/python-variables-and-types
+    - file: lecture01/homework_01
+  - file: lecture02/intro
+    sections:
+    - file: lecture02/python-tuples
+    - file: lecture02/python-lists
+    - file: lecture02/python-numpy
+    - file: lecture02/homework_02
+  - file: lecture03/intro
+    sections:
+    - file: lecture03/python-matrices
+    - file: lecture03/python-csv-files
+    - file: lecture03/python-pandas
+    - file: lecture03/homework_03
+  - file: lecture04/intro
+    sections:
+    - file: lecture04/python-plotting
+    - file: lecture04/python-plot-noisy
+    - file: lecture04/python-scatter
+    - file: lecture04/python-histograms
+    - file: lecture04/homework_04
+  - file: lecture05/intro
+    sections:
+    - file: lecture05/python-strings
+    - file: lecture05/python-print
+    - file: lecture05/python-functions
+    - file: lecture05/applying-functions-to-dataframes
+    - file: lecture05/models-are-functions
+    - file: lecture05/homework_05
+  - file: lecture06/intro
+    sections:
+    - file: lecture06/python-conditionals
+    - file: lecture06/python-loops
+    - file: lecture06/python-pandas-selections
+    - file: lecture06/homework_06
+  - file: lecture07/intro
+    sections:
+    - file: lecture07/probability-and-state-of-knowledge
+    - file: lecture07/probability-common-sense
+    - file: lecture07/principle-of-insufficient-reason
+    - file: lecture07/estimating-probabilities-by-simulation
+    - file: lecture07/estimating-probabilities-from-data
+    - file: lecture07/homework_07
+  - file: lecture08/intro
+    sections:
+    - file: lecture08/probability-rules
+    - file: lecture08/probability-urn-example
+    - file: lecture08/probability-of-disjunction
+    - file: lecture08/probability-sum-rule
+    - file: lecture08/probability-urn-example-sum-rule
+    - file: lecture08/probability-urn-example-information-flow
+    - file: lecture08/homework_08
+  - file: lecture09/intro
+    sections:
+    - file: lecture09/discrete-random-variables
+    - file: lecture09/probability-mass-function
+    - file: lecture09/the-bernoulli-distribution
+    - file: lecture09/properties-of-the-probability-mass-function
+    - file: lecture09/the-categorical-distribution
+    - file: lecture09/the-binomial-distribution
+    - file: lecture09/the-poisson-distribution
+    - file: lecture09/homework_09
+  - file: lecture10/intro
+    sections:
+    - file: lecture10/continuous-random-variables
+    - file: lecture10/example-manufacturing-steel-balls
+    - file: lecture10/cumulative-distribution-function
+    - file: lecture10/probability-density-function
+    - file: lecture10/the-uniform-distribution
+    - file: lecture10/homework_10
+  - file: lecture11/intro
+    sections:
+    - file: lecture11/expectation-discrete-rv
+    - file: lecture11/examples-expectation-discrete-rvs
+    - file: lecture11/expectation-continuous-rv
+    - file: lecture11/expectation-notation
+    - file: lecture11/properties-of-expectations
+    - file: lecture11/variance
+    - file: lecture11/properties-of-variance
+    - file: lecture11/examples-variance
+    - file: lecture11/homework_11
+  - file: lecture12/intro
+    sections:
+    - file: lecture12/the-standard-normal
+    - file: lecture12/standard-normal-quantiles
+    - file: lecture12/the-normal
+    - file: lecture12/normal-quantiles
+    - file: lecture12/example-fitting-normals
+    - file: lecture12/homework_12
+  - file: lecture13/intro
+    sections:
+    - file: lecture13/joint-probability-density-function
+    - file: lecture13/repeated-experiments
+    - file: lecture13/the-maximum-likelihood-principle
+    - file: lecture13/fitting-the-normal-with-maximum-likelihood
+    - file: lecture13/fitting-the-bernoulli
+    - file: lecture13/predictive-checking
+    - file: lecture13/homework_13
+  - file: lecture14/intro
+    sections:
+    - file: lecture14/covariance
+    - file: lecture14/correlation
+    - file: lecture14/correlation-is-not-causation
+    - file: lecture14/uncorrelated-does-not-imply-independent
+    - file: lecture14/linear-regression-with-one-variable
+    - file: lecture14/homework_14
+  - file: lecture15/intro
+    sections:
+    - file: lecture15/regression-with-one-variable-revisited
+    - file: lecture15/example-linear-regression
+    - file: lecture15/polynomial-regression
+    - file: lecture15/the-generalized-linear-model
+    - file: lecture15/cross-validation
+    - file: lecture15/maximum-likelihood-interpretation
+    - file: lecture15/maximum-likelihood-example
+    - file: lecture15/homework_15
+  - file: lecture16/intro
+    sections:
+    - file: lecture16/logistic-regression
+    - file: lecture16/example-logistic-regression-one-variable
+    - file: lecture16/example-logistic-regression-many-features
+    - file: lecture16/classification-diagnostics
+    - file: lecture16/homework_16
+  - file: bibliography
