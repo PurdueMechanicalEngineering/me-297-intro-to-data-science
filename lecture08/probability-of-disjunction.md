@@ -17,7 +17,7 @@ In words, this says
 
 ```{figure} venn.png
 :height: 250px
-:name: venn-diagram
+:name: venn-diagram2
 
 Venn diagram showing the information $I$, and the logical propositions $A$ and $B$.
 ```
