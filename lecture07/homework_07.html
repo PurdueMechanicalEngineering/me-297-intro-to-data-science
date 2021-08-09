@@ -1,0 +1,1374 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Homework 7 &#8212; Introduction to Data Science for Mechanical Engineers (Lecture Book)</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Lecture 8: The basic rules of probability" href="../lecture08/intro.html" />
+    <link rel="prev" title="Estimating probabilities from data - Bootstrapping" href="estimating-probabilities-from-data.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      <h1 class="site-logo" id="site-title">Introduction to Data Science for Mechanical Engineers (Lecture Book)</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../index.html">
+   Preface
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../lecture01/intro.html">
+   Lecture 1: Introduction
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture01/what-is-data-science.html">
+     What is data science?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture01/cool-applications.html">
+     Some cool appliations of data science in mechanical engineering
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture01/python-intro.html">
+     Why Python?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture01/python-expressions.html">
+     Python expressions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture01/python-variables-and-types.html">
+     Python variables and types
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture01/homework_01.html">
+     Homework 1
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../lecture02/intro.html">
+   Lecture 2: Data arrays
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture02/python-tuples.html">
+     Python tuples
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture02/python-lists.html">
+     Python lists
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture02/python-numpy.html">
+     Numerical Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture02/homework_02.html">
+     Homework 2
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../lecture03/intro.html">
+   Lecture 3: Data loading and selection
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture03/python-matrices.html">
+     Matrices
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture03/python-csv-files.html">
+     Comma-separated values file format
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture03/python-pandas.html">
+     The Python data analysis library
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture03/homework_03.html">
+     Homework 3
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../lecture04/intro.html">
+   Lecture 4: Data visualization
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture04/python-plotting.html">
+     Plotting simple functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture04/python-plot-noisy.html">
+     Plotting noisy measurements
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture04/python-scatter.html">
+     Scatter plots
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture04/python-histograms.html">
+     Histograms
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture04/homework_04.html">
+     Homework 4
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../lecture05/intro.html">
+   Lecture 5: Functions, data manipulation, and models
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture05/python-strings.html">
+     Basics of strings
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture05/python-print.html">
+     The print function
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture05/python-functions.html">
+     Python functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture05/applying-functions-to-dataframes.html">
+     Applying functions to dataframes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture05/models-are-functions.html">
+     Models are functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture05/homework_05.html">
+     Homework 5
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../lecture06/intro.html">
+   Lecture 6: Conditionals and loops
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture06/python-conditionals.html">
+     Python conditionals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture06/python-loops.html">
+     Python loops
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture06/python-pandas-selections.html">
+     Selecting dataframe rows that satisfy a boolean expression
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture06/homework_06.html">
+     Homework 6
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="intro.html">
+   Lecture 7: Probability as a measure of uncertainty
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="probability-and-state-of-knowledge.html">
+     Probability as a representation of our state of knowledge
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="probability-common-sense.html">
+     The common sense assumptions that give rise to the basic probability rules.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="principle-of-insufficient-reason.html">
+     The principle of insufficient reason
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="estimating-probabilities-by-simulation.html">
+     Estimating probabilities by simulation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="estimating-probabilities-from-data.html">
+     Estimating probabilities from data - Bootstrapping
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Homework 7
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../lecture08/intro.html">
+   Lecture 8: The basic rules of probability
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture08/probability-rules.html">
+     The basic rules of probability
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture08/probability-urn-example.html">
+     Example - Drawing balls from a box without replacement
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture08/probability-of-disjunction.html">
+     Probability of logical disjunctions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture08/probability-sum-rule.html">
+     The sum rule
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture08/probability-urn-example-sum-rule.html">
+     Example - Drawing balls from a box without replacement (sum rule)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture08/probability-urn-example-information-flow.html">
+     Example - Drawing balls from a box without replacement (information flow)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture08/homework_08.html">
+     Homework 8
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../lecture09/intro.html">
+   Lecture 9: Discrete random variables
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture09/discrete-random-variables.html">
+     Discrete Random variables
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture09/probability-mass-function.html">
+     The probability mass function
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture09/the-bernoulli-distribution.html">
+     The Bernoulli distribution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture09/properties-of-the-probability-mass-function.html">
+     Properties of the probability mass function
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture09/the-categorical-distribution.html">
+     The Categorical distribution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture09/the-binomial-distribution.html">
+     The Binomial Distribution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture09/the-poisson-distribution.html">
+     The Poisson distribution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture09/homework_09.html">
+     Homework 9
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../lecture10/intro.html">
+   Lecture 10: Continuous random variables
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture10/continuous-random-variables.html">
+     Continuous random variables
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture10/example-manufacturing-steel-balls.html">
+     Example: Uncertainties in steel ball manufacturing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture10/cumulative-distribution-function.html">
+     The cumulative distribution function
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture10/probability-density-function.html">
+     The probability density function
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture10/the-uniform-distribution.html">
+     The uniform distribution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture10/homework_10.html">
+     Homework 10
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../lecture11/intro.html">
+   Lecture 11: Expectations, variances, and their properties
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture11/expectation-discrete-rv.html">
+     Expectation of discrete random variables
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture11/examples-expectation-of-discrete-rvs.html">
+     Examples of expectations of discrete random variables
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture11/expectation-continuous-rv.html">
+     Expectation of a continuous random variable
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture11/expectation-notation.html">
+     Simplifying our notation about expectations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture11/properties-of-expectations.html">
+     Properties of expectations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture11/variance.html">
+     Variance of a random variable
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture11/properties-of-variance.html">
+     Properties of variance
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture11/examples-variance.html">
+     Examples of variances of random variables
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture11/homework_11.html">
+     Homework 11
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../lecture12/intro.html">
+   Lecture 12: The Normal distribution, quantiles, and credible intervals
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture12/the-standard-normal.html">
+     The standard Normal distribution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture12/standard-normal-quantiles.html">
+     Quantiles of the standard Normal
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture12/the-normal.html">
+     The Normal distribution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture12/normal-quantiles.html">
+     Quantiles of the Normal
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture12/example-fitting-normals.html">
+     Fitting Normal distributions to data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture12/homework_12.html">
+     Homework 12
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../lecture13/intro.html">
+   Lecture 13: Fitting models with the principle of maximum likelihood
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <label for="toctree-checkbox-13">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture13/joint-probability-density-function.html">
+     The joint probability density function
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture13/repeated-experiments.html">
+     Repeated independent experiments
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture13/the-maximum-likelihood-principle.html">
+     The maximum likelihood principle
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture13/fitting-the-normal-with-maximum-likelihood.html">
+     Fitting the parameters of a Normal using the maximum likelihood principle
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture13/fitting-the-bernoulli.html">
+     Fitting the Bernoulli with maximum likelihood
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture13/predictive-checking.html">
+     Predictive checking
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture13/homework_13.html">
+     Homework 13
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../lecture14/intro.html">
+   Lecture 14: Covariance, correlation, and linear regression with one variable
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+  <label for="toctree-checkbox-14">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture14/covariance.html">
+     Covariance between two random variables
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture14/correlation.html">
+     Correlation between two random variables
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture14/correlation-is-not-causation.html">
+     Correlation is not causation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture14/uncorrelated-does-not-imply-independent.html">
+     Two uncorrelated random variables are not necessarily independent
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture14/linear-regression-with-one-variable.html">
+     Linear regression with one variable
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture14/homework_14.html">
+     Homework 14
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../lecture15/intro.html">
+   Lecture 15: Linear regression
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+  <label for="toctree-checkbox-15">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture15/regression-with-one-variable-revisited.html">
+     Regression with one variable revisited
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture15/example-linear-regression.html">
+     Example: Linear regression with a single variable
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture15/polynomial-regression.html">
+     Polynomial Regression
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture15/the-generalized-linear-model.html">
+     The generalized linear model
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture15/regression-diagnostics.html">
+     Measures of Predictive Accuracy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture15/cross-validation.html">
+     Cross validation for selecting the number of basis functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture15/maximum-likelihood-interpretation.html">
+     Maximum likelihood interpretation of least squares
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture15/maximum-likelihood-example.html">
+     Example: Regression with estimated measurement noise
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture15/homework_15.html">
+     Homework 15
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../lecture16/intro.html">
+   Lecture 16: Classification via logistic regression
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+  <label for="toctree-checkbox-16">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture16/logistic-regression.html">
+     Logistic regression
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture16/example-logistic-regression-one-variable.html">
+     Example: Logistic regression with one variable (High melting explosives)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture16/example-logistic-regression-many-features.html">
+     Logistic regression with many features
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture16/classification-diagnostics.html">
+     Diagnostics for Classification
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture16/homework_16.html">
+     Homework 16
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../bibliography.html">
+   Bibliography
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/lecture07/homework_07.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/lecture07/homework_07.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/executablebooks/jupyter-book/blob/master/lecture07/homework_07.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#student-details">
+   Student details
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#problem-1-blackjack-probabilities">
+   Problem 1 - Blackjack probabilities
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-finding-the-probability-of-a-using-the-principle-of-inssuficient-reason">
+     2.A - Finding the probability of
+     <span class="math notranslate nohighlight">
+      \(A\)
+     </span>
+     using the principle of inssuficient reason
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#b-estimating-the-probability-of-a-by-simmulation">
+     2.B - Estimating the probability of A by simmulation
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#problem-2-predicting-the-probability-of-major-earthquakes-in-southern-california">
+   Problem 2 - Predicting the probability of major earthquakes in Southern California
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="homework-7">
+<span id="lecture07-homework"></span><h1>Homework 7<a class="headerlink" href="#homework-7" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Type your name and email in the “Student details” section below.</p></li>
+<li><p>Develop the code and generate the figures you need to solve the problems using this notebook.</p></li>
+<li><p>For the answers that require a mathematical proof or derivation you can either:</p>
+<ul>
+<li><p>Type the answer using the built-in latex capabilities. In this case, simply export the notebook as a pdf and upload it on gradescope; or</p></li>
+<li><p>You can print the notebook (after you are done with all the code), write your answers by hand, scan, turn your response to a single pdf, and upload on gradescope.</p></li>
+</ul>
+</li>
+<li><p>The total homework points are 100. Please note that the problems are not weighed equally.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>This is due before the beginning of the next lecture.</p></li>
+<li><p>Please match all the pages corresponding to each of the questions when you submit on gradescope.</p></li>
+</ul>
+</div>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Here are some modules that you may need - please run this block of code:</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set_context</span><span class="p">(</span><span class="s1">&#39;paper&#39;</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">scipy</span>
+<span class="kn">import</span> <span class="nn">scipy.stats</span> <span class="k">as</span> <span class="nn">st</span>
+<span class="c1"># A helper function for downloading files</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="k">def</span> <span class="nf">download</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">local_filename</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Downloads the file in the ``url`` and saves it in the current working directory.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">local_filename</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">local_filename</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">local_filename</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fd</span><span class="p">:</span>
+        <span class="n">fd</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="student-details">
+<h2>Student details<a class="headerlink" href="#student-details" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>First Name:</strong></p></li>
+<li><p><strong>Last Name:</strong></p></li>
+<li><p><strong>Email:</strong></p></li>
+</ul>
+</div>
+<div class="section" id="problem-1-blackjack-probabilities">
+<h2>Problem 1 - Blackjack probabilities<a class="headerlink" href="#problem-1-blackjack-probabilities" title="Permalink to this headline">¶</a></h2>
+<p>Blackjack is a popular card game.
+The background information <span class="math notranslate nohighlight">\(I\)</span> captures the basic rules of the game relevant to this problem:</p>
+<blockquote>
+<div><p>We have a deck of 52 cards.
+The deck includes: Four versions aces (A); Four versions of each number from 2 to 10; Four versions of the figures J, Q, and K.
+In blackjack all the cards are associated with a number.
+The cards that have a number on them are associated with that number.
+The figures J, Q, and K are associated with the number 10.
+The aces A can either be the number 1 or the number 11.
+The deck of cards is shuffled <a class="reference external" href="https://youtu.be/AxJubaijQbI">adequately</a>.</p>
+</div></blockquote>
+<p>Now consider the logical proposition <span class="math notranslate nohighlight">\(A\)</span> (blackjack):</p>
+<blockquote>
+<div><p>You draw two cards at random from the deck without replacement.
+You either have two aces (AA) or the maximum sum of the numbers associated with the cards is 21.
+For example: (10, A), (J, A), etc.</p>
+</div></blockquote>
+<div class="section" id="a-finding-the-probability-of-a-using-the-principle-of-inssuficient-reason">
+<h3>2.A - Finding the probability of <span class="math notranslate nohighlight">\(A\)</span> using the principle of inssuficient reason<a class="headerlink" href="#a-finding-the-probability-of-a-using-the-principle-of-inssuficient-reason" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Find the number of ways in which you can choose two unique cards from the deck.
+Hint: Google “N choose k”.</p></li>
+</ul>
+<p><strong>Answer:</strong></p>
+<p><em>Your answer here.</em></p>
+<ul class="simple">
+<li><p>Find the number ways in which you can get two cards that sum to 21. Hint: Enumerate all possibilities.</p></li>
+</ul>
+<p><strong>Answer:</strong></p>
+<p><em>Your answer here.</em></p>
+<ul class="simple">
+<li><p>Find the probability that you pick two cards that sum to 21, i.e., find <span class="math notranslate nohighlight">\(p(A|I)\)</span>. Hint: Use the principle of insufficient reason.</p></li>
+</ul>
+<p><strong>Answer:</strong></p>
+<p><em>Your answer here.</em></p>
+</div>
+<div class="section" id="b-estimating-the-probability-of-a-by-simmulation">
+<h3>2.B - Estimating the probability of A by simmulation<a class="headerlink" href="#b-estimating-the-probability-of-a-by-simmulation" title="Permalink to this headline">¶</a></h3>
+<p>In this problem, we are going to use Monte Carlo simulations to estimate the probability of picking two cards that sum to 21, i.e., <span class="math notranslate nohighlight">\(p(A|I)\)</span>.
+Basically, we are going to simulate the process of picking these two cards.
+First, let’s start by making all the different cards that appear in a deck of 52.
+In what follows, I use the following conventions:</p>
+<ul class="simple">
+<li><p>‘d’ stands for ‘diamonds’.</p></li>
+<li><p>‘h’ stands for ‘hearts’.</p></li>
+<li><p>‘s’ stands for ‘spades’.</p></li>
+<li><p>‘c’ stands for ‘clubs’.
+Numbers stand for themselves. And finally:</p></li>
+<li><p>‘A’ for ‘ace’.</p></li>
+<li><p>‘J’ for ‘jack’.</p></li>
+<li><p>‘Q’ for ‘queen’.</p></li>
+<li><p>‘K’ for ‘king’.
+For example, this is if you see the string ‘2h’ then this is the ‘two of hearts’.
+If you see ‘Ad’ this is the ‘Ace of diamonds’. And so on.
+Let’s make a deck of cards:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">deck</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;2&#39;</span><span class="p">,</span> <span class="s1">&#39;3&#39;</span><span class="p">,</span> <span class="s1">&#39;4&#39;</span><span class="p">,</span> <span class="s1">&#39;5&#39;</span><span class="p">,</span> <span class="s1">&#39;6&#39;</span><span class="p">,</span> <span class="s1">&#39;7&#39;</span><span class="p">,</span> <span class="s1">&#39;8&#39;</span><span class="p">,</span> <span class="s1">&#39;9&#39;</span><span class="p">,</span> <span class="s1">&#39;10&#39;</span><span class="p">,</span> <span class="s1">&#39;J&#39;</span><span class="p">,</span> <span class="s1">&#39;Q&#39;</span><span class="p">,</span> <span class="s1">&#39;K&#39;</span><span class="p">]:</span>
+    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="s1">&#39;h&#39;</span><span class="p">,</span> <span class="s1">&#39;s&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">]:</span>
+        <span class="n">card</span> <span class="o">=</span> <span class="n">n</span> <span class="o">+</span> <span class="n">c</span>
+        <span class="n">deck</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">card</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">deck</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can use <a class="reference external" href="https://numpy.org/doc/stable/reference/random/generated/numpy.random.shuffle.html">numpy.random.shuffle</a> to shuffle the deck in place.
+Here is how:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">deck</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">deck</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Once the deck is shuffled, you can pick two cards at random by just picking the first two cards of the deck:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_cards</span> <span class="o">=</span> <span class="n">deck</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">my_cards</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, let’s write a function that calculates the sum of the cards.
+I wrote the function so that it only works with two cards.
+It will always use 11 for aces.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">count_cards</span><span class="p">(</span><span class="n">cards</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Counts cards according to blackjack conventions.</span>
+<span class="sd">    </span>
+<span class="sd">    Arguments:</span>
+<span class="sd">    cards   -   Two cards. They much be a string from a deck.</span>
+<span class="sd">    </span>
+<span class="sd">    Returns: The blackjack value of the cards.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">cards</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;This only works for two cards.&#39;</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">cards</span><span class="p">:</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="n">c</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="s1">&#39;A&#39;</span><span class="p">:</span>
+            <span class="n">s</span> <span class="o">+=</span> <span class="mi">11</span>
+        <span class="k">elif</span> <span class="n">n</span> <span class="o">==</span> <span class="s1">&#39;J&#39;</span> <span class="ow">or</span> <span class="n">n</span> <span class="o">==</span> <span class="s1">&#39;Q&#39;</span> <span class="ow">or</span> <span class="n">n</span> <span class="o">==</span> <span class="s1">&#39;K&#39;</span><span class="p">:</span>
+            <span class="n">s</span> <span class="o">+=</span> <span class="mi">10</span>
+        <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span> <span class="c1"># this is the case of &#39;10d&#39;, &#39;10h&#39;, etc.</span>
+            <span class="n">s</span> <span class="o">+=</span> <span class="mi">10</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">s</span> <span class="o">+=</span> <span class="nb">int</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">s</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s test it a few times:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">my_cards</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">count_cards</span><span class="p">(</span><span class="n">my_cards</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Do it ten times at random:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">deck</span><span class="p">)</span>
+    <span class="n">my_cards</span> <span class="o">=</span> <span class="n">deck</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span>
+    <span class="n">sum_of_cards</span> <span class="o">=</span> <span class="n">count_cards</span><span class="p">(</span><span class="n">my_cards</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">my_cards</span><span class="p">,</span> <span class="s1">&#39; sum to: &#39;</span><span class="p">,</span> <span class="n">sum_of_cards</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Now, we have everything we need. Complete the following code which use the Monte Carlo method to estimate the probability of randomly picking two cards that sum to 21.
+Feel free to experiment with the number of simulations so that you get an accurate estimate.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># The number of experiments you want to simulate</span>
+<span class="n">num_exp</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="c1"># This is a list in which we are going to put the result</span>
+<span class="c1"># of each &quot;experiment&quot;. We will record a 1 (one) if the experiment</span>
+<span class="c1"># is successful (cards sum to 21) and a 0 (zero) otherwise</span>
+<span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="c1"># Loop over experiments</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_exp</span><span class="p">):</span>
+    <span class="c1"># YOUR CODE HERE (shuffle the deck)</span>
+    <span class="n">my_cards</span> <span class="o">=</span> <span class="c1"># YOUR CODE HERE (pick the first two cards from the deck)</span>
+    <span class="n">sum_of_cards</span> <span class="o">=</span> <span class="c1"># YOUR CODE HERE (find the sum of the cards)</span>
+    <span class="c1"># YOUR CODE HERE (write a conditional statement that appends 1</span>
+    <span class="c1">#                 to result if the sum of cards is 21 and 0 otherwise)</span>
+<span class="n">p_A_g_I</span> <span class="o">=</span> <span class="c1"># YOUR CODE HERE (use result to estimate the probability of getting two</span>
+        <span class="c1">#                 cards that sum to 21)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;p(A|I) ~= </span><span class="si">{0:1.5f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">p_A_g_I</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Plot the estimate of <span class="math notranslate nohighlight">\(p(A|I)\)</span> as a function of the number of experiments. In the same plot, use a red dashed line to mark the true value of <span class="math notranslate nohighlight">\(p(A|I)\)</span> based on your answer to the very first question. Hint: See the discussion at the very end of <a class="reference internal" href="estimating-probabilities-by-simulation.html#lecture07-estimating-probabilities-simulation"><span class="std std-ref">Estimating probabilities by simulation</span></a>.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="problem-2-predicting-the-probability-of-major-earthquakes-in-southern-california">
+<span id="lecture07-homework-problem2"></span><h2>Problem 2 - Predicting the probability of major earthquakes in Southern California<a class="headerlink" href="#problem-2-predicting-the-probability-of-major-earthquakes-in-southern-california" title="Permalink to this headline">¶</a></h2>
+<p>We will use the <a class="reference external" href="https://scedc.caltech.edu/data/cloud.html#eq-catalog">Southern California Earthquake Data Center catalog</a> in this problem.
+The catalog contains all earthquakes recorded from 1932 until now in Southern California.
+Do not worry about how I get the data. Just run the code and it will produce a nice dataframe that you can play with.
+Our goal is to estimate the probability of a major earthquake (to be defined below) somewhere in Southern California during a given year.</p>
+<p>First, let’s download the data and put them in a dataframe.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">year</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1932</span><span class="p">,</span> <span class="mi">2021</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Downloading year&#39;</span><span class="p">,</span> <span class="n">year</span><span class="p">)</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://raw.githubusercontent.com/SCEDC/SCEDC-catalogs/master/SCEC_DC/</span><span class="si">{0:d}</span><span class="s1">.catalog&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">year</span><span class="p">)</span>
+    <span class="n">download</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Each one of these is a csv file.
+We will put them all in the same daframe for your convenience:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">list_of_dfs</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">year</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1932</span><span class="p">,</span> <span class="mi">2021</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Reading: &#39;</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span>
+    <span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">{0:d}</span><span class="s1">.catalog&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">year</span><span class="p">)</span>
+    <span class="n">df_year</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">delim_whitespace</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">comment</span><span class="o">=</span><span class="s1">&#39;#&#39;</span><span class="p">,</span>
+                      <span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Date&#39;</span><span class="p">,</span> <span class="s1">&#39;Hour&#39;</span><span class="p">,</span> <span class="s1">&#39;ET&#39;</span><span class="p">,</span> <span class="s1">&#39;GT&#39;</span><span class="p">,</span> <span class="s1">&#39;MAG&#39;</span><span class="p">,</span> <span class="s1">&#39;M&#39;</span><span class="p">,</span> <span class="s1">&#39;LAT&#39;</span><span class="p">,</span> <span class="s1">&#39;LON&#39;</span><span class="p">,</span>
+                               <span class="s1">&#39;DEPTH&#39;</span><span class="p">,</span> <span class="s1">&#39;Q&#39;</span><span class="p">,</span> <span class="s1">&#39;EVID&#39;</span><span class="p">,</span> <span class="s1">&#39;NPH&#39;</span><span class="p">,</span> <span class="s1">&#39;NGRM&#39;</span><span class="p">])</span>
+    <span class="n">df_year</span><span class="o">.</span><span class="n">Date</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df_year</span><span class="p">[</span><span class="s1">&#39;Date&#39;</span><span class="p">],</span> <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;%Y/%m/</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">list_of_dfs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">df_year</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">list_of_dfs</span><span class="p">,</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DatetimeIndex</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Date&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">year</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Each row in this dataframe corresponds to an earthquake event that happened between 1/1/1932 and 12/31/2020. The meaning of the columns is explained <a class="reference external" href="https://service.scedc.caltech.edu/ftp/catalogs/SCEC_DC/README">here</a>.
+But for the purposes of this problem we will only need information from the following columns:</p>
+<ul class="simple">
+<li><p>Year: This is the year of the event.</p></li>
+<li><p>ET: This is the type of the event. There are various types of events. For example, the seismometers may pick more than earthquakes, e.g., explosions. We are only intersted in earthquake events which are labeled by <code class="docutils literal notranslate"><span class="pre">eq</span></code>.</p></li>
+<li><p>MAG: This is the magnitude of the event.</p></li>
+</ul>
+<p>Let’s play with the data set to gain some experience.
+First, let’s extract all data for a random year.
+Say, year 2019.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_2019</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2019</span><span class="p">]</span>
+<span class="n">df_2019</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Out of these, we only care about earthquake events.
+So, let’s filter out everything else:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_2019_eq</span> <span class="o">=</span> <span class="n">df_2019</span><span class="p">[</span><span class="n">df_2019</span><span class="p">[</span><span class="s1">&#39;ET&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;eq&#39;</span><span class="p">]</span>
+<span class="n">df_2019_eq</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, let’s see if there was at least one major earthquake during 2019:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">test_mag</span> <span class="o">=</span> <span class="n">df_2019_eq</span><span class="p">[</span><span class="s1">&#39;MAG&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">6</span>
+<span class="n">test_mag</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Is there at least one True value in this array?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">test_mag</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>There are exactly 5 major earthquakes.
+You can extract the number like this:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">test_mag</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()[</span><span class="kc">True</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>So, to test whether or not there was a major earthquake you need to do:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kc">True</span> <span class="ow">in</span> <span class="n">test_mag</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Now, we will use bootstrapping to estimate the probability of a major earthquake during a randomly picked year.
+Follow the instructions below completing the code where necessary.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">estimate_probability_of_major_earthquake_during_year</span><span class="p">(</span><span class="n">num_years</span><span class="p">,</span> <span class="n">df</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Estimate the probability of major earthquake in a random year.</span>
+<span class="sd">    </span>
+<span class="sd">    Arguments:</span>
+<span class="sd">    num_years    -    The number of years to pick at random.</span>
+<span class="sd">    df           -    The dataframe containing all the observed events.</span>
+<span class="sd">    </span>
+<span class="sd">    Returns: The number of years in which we had at least one major earthquake divided by the num_years.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">num_major_eqs</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_years</span><span class="p">):</span>
+        <span class="c1"># Pick a year at random between 1932 and 2020</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1932</span><span class="p">,</span> <span class="mi">2021</span><span class="p">)</span>
+        <span class="c1"># Extract all the events that happened in that year</span>
+        <span class="n">df_y</span> <span class="o">=</span> <span class="c1"># YOUR CODE HERE</span>
+        <span class="c1"># Find all earthquake events</span>
+        <span class="n">df_y_eq</span> <span class="o">=</span> <span class="c1"># YOUR CODE HERE</span>
+        <span class="c1"># Test if there is at least one major earthquake in this year</span>
+        <span class="n">test_mag</span> <span class="o">=</span> <span class="c1"># YOUR CODE HERE</span>
+        <span class="n">test_mag_counts</span> <span class="o">=</span> <span class="n">test_mag</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+        <span class="c1"># Test if there is at least one major event in this year</span>
+        <span class="c1"># and increase num_major_eqs by one if yes</span>
+        <span class="k">if</span> <span class="kc">True</span> <span class="ow">in</span> <span class="n">test_mag</span><span class="o">.</span><span class="n">value_counts</span><span class="p">():</span>
+            <span class="n">num_major_eqs</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">num_major_eqs</span> <span class="o">/</span> <span class="n">num_years</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Use the following lines to test your code.
+We run it 10 times. Notice that everytime you get a slighlty different estimate.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="n">p_major_eq</span> <span class="o">=</span> <span class="n">estimate_probability_of_major_earthquake_during_year</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="n">df</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;p_major_eq = </span><span class="si">{0:1.2f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">p_major_eq</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Repeat the probability estimation above 200 times, store all estimates in a list, and do a histogram of the estimates. Hint: Replicate what we did at the very end of <a class="reference internal" href="estimating-probabilities-from-data.html#lecture07-estimating-probabilities-from-data"><span class="std std-ref">Estimating probabilities from data - Bootstrapping</span></a>.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># A place to store the estimates</span>
+<span class="n">p_major_eqs</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="c1"># Put 1000 estimates in there</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">200</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="n">p_major_eq</span> <span class="o">=</span> <span class="c1"># your code here</span>
+    <span class="n">p_major_eqs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">p_major_eq</span><span class="p">)</span>
+<span class="c1"># And now do the histogram</span>
+<span class="c1"># Your code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./lecture07"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="estimating-probabilities-from-data.html" title="previous page">Estimating probabilities from data - Bootstrapping</a>
+    <a class='right-next' id="next-link" href="../lecture08/intro.html" title="next page">Lecture 8: The basic rules of probability</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Ilias Bilionis<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

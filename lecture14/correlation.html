@@ -1,0 +1,1236 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Correlation between two random variables &#8212; Introduction to Data Science for Mechanical Engineers (Lecture Book)</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Correlation is not causation" href="correlation-is-not-causation.html" />
+    <link rel="prev" title="Covariance between two random variables" href="covariance.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      <h1 class="site-logo" id="site-title">Introduction to Data Science for Mechanical Engineers (Lecture Book)</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../index.html">
+   Preface
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../lecture01/intro.html">
+   Lecture 1: Introduction
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture01/what-is-data-science.html">
+     What is data science?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture01/cool-applications.html">
+     Some cool appliations of data science in mechanical engineering
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture01/python-intro.html">
+     Why Python?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture01/python-expressions.html">
+     Python expressions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture01/python-variables-and-types.html">
+     Python variables and types
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture01/homework_01.html">
+     Homework 1
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../lecture02/intro.html">
+   Lecture 2: Data arrays
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture02/python-tuples.html">
+     Python tuples
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture02/python-lists.html">
+     Python lists
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture02/python-numpy.html">
+     Numerical Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture02/homework_02.html">
+     Homework 2
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../lecture03/intro.html">
+   Lecture 3: Data loading and selection
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture03/python-matrices.html">
+     Matrices
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture03/python-csv-files.html">
+     Comma-separated values file format
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture03/python-pandas.html">
+     The Python data analysis library
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture03/homework_03.html">
+     Homework 3
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../lecture04/intro.html">
+   Lecture 4: Data visualization
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture04/python-plotting.html">
+     Plotting simple functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture04/python-plot-noisy.html">
+     Plotting noisy measurements
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture04/python-scatter.html">
+     Scatter plots
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture04/python-histograms.html">
+     Histograms
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture04/homework_04.html">
+     Homework 4
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../lecture05/intro.html">
+   Lecture 5: Functions, data manipulation, and models
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture05/python-strings.html">
+     Basics of strings
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture05/python-print.html">
+     The print function
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture05/python-functions.html">
+     Python functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture05/applying-functions-to-dataframes.html">
+     Applying functions to dataframes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture05/models-are-functions.html">
+     Models are functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture05/homework_05.html">
+     Homework 5
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../lecture06/intro.html">
+   Lecture 6: Conditionals and loops
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture06/python-conditionals.html">
+     Python conditionals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture06/python-loops.html">
+     Python loops
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture06/python-pandas-selections.html">
+     Selecting dataframe rows that satisfy a boolean expression
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture06/homework_06.html">
+     Homework 6
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../lecture07/intro.html">
+   Lecture 7: Probability as a measure of uncertainty
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture07/probability-and-state-of-knowledge.html">
+     Probability as a representation of our state of knowledge
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture07/probability-common-sense.html">
+     The common sense assumptions that give rise to the basic probability rules.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture07/principle-of-insufficient-reason.html">
+     The principle of insufficient reason
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture07/estimating-probabilities-by-simulation.html">
+     Estimating probabilities by simulation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture07/estimating-probabilities-from-data.html">
+     Estimating probabilities from data - Bootstrapping
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture07/homework_07.html">
+     Homework 7
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../lecture08/intro.html">
+   Lecture 8: The basic rules of probability
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture08/probability-rules.html">
+     The basic rules of probability
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture08/probability-urn-example.html">
+     Example - Drawing balls from a box without replacement
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture08/probability-of-disjunction.html">
+     Probability of logical disjunctions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture08/probability-sum-rule.html">
+     The sum rule
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture08/probability-urn-example-sum-rule.html">
+     Example - Drawing balls from a box without replacement (sum rule)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture08/probability-urn-example-information-flow.html">
+     Example - Drawing balls from a box without replacement (information flow)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture08/homework_08.html">
+     Homework 8
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../lecture09/intro.html">
+   Lecture 9: Discrete random variables
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture09/discrete-random-variables.html">
+     Discrete Random variables
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture09/probability-mass-function.html">
+     The probability mass function
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture09/the-bernoulli-distribution.html">
+     The Bernoulli distribution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture09/properties-of-the-probability-mass-function.html">
+     Properties of the probability mass function
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture09/the-categorical-distribution.html">
+     The Categorical distribution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture09/the-binomial-distribution.html">
+     The Binomial Distribution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture09/the-poisson-distribution.html">
+     The Poisson distribution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture09/homework_09.html">
+     Homework 9
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../lecture10/intro.html">
+   Lecture 10: Continuous random variables
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture10/continuous-random-variables.html">
+     Continuous random variables
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture10/example-manufacturing-steel-balls.html">
+     Example: Uncertainties in steel ball manufacturing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture10/cumulative-distribution-function.html">
+     The cumulative distribution function
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture10/probability-density-function.html">
+     The probability density function
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture10/the-uniform-distribution.html">
+     The uniform distribution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture10/homework_10.html">
+     Homework 10
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../lecture11/intro.html">
+   Lecture 11: Expectations, variances, and their properties
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture11/expectation-discrete-rv.html">
+     Expectation of discrete random variables
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture11/examples-expectation-of-discrete-rvs.html">
+     Examples of expectations of discrete random variables
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture11/expectation-continuous-rv.html">
+     Expectation of a continuous random variable
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture11/expectation-notation.html">
+     Simplifying our notation about expectations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture11/properties-of-expectations.html">
+     Properties of expectations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture11/variance.html">
+     Variance of a random variable
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture11/properties-of-variance.html">
+     Properties of variance
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture11/examples-variance.html">
+     Examples of variances of random variables
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture11/homework_11.html">
+     Homework 11
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../lecture12/intro.html">
+   Lecture 12: The Normal distribution, quantiles, and credible intervals
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture12/the-standard-normal.html">
+     The standard Normal distribution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture12/standard-normal-quantiles.html">
+     Quantiles of the standard Normal
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture12/the-normal.html">
+     The Normal distribution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture12/normal-quantiles.html">
+     Quantiles of the Normal
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture12/example-fitting-normals.html">
+     Fitting Normal distributions to data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture12/homework_12.html">
+     Homework 12
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../lecture13/intro.html">
+   Lecture 13: Fitting models with the principle of maximum likelihood
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <label for="toctree-checkbox-13">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture13/joint-probability-density-function.html">
+     The joint probability density function
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture13/repeated-experiments.html">
+     Repeated independent experiments
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture13/the-maximum-likelihood-principle.html">
+     The maximum likelihood principle
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture13/fitting-the-normal-with-maximum-likelihood.html">
+     Fitting the parameters of a Normal using the maximum likelihood principle
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture13/fitting-the-bernoulli.html">
+     Fitting the Bernoulli with maximum likelihood
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture13/predictive-checking.html">
+     Predictive checking
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture13/homework_13.html">
+     Homework 13
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="intro.html">
+   Lecture 14: Covariance, correlation, and linear regression with one variable
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+  <label for="toctree-checkbox-14">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="covariance.html">
+     Covariance between two random variables
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Correlation between two random variables
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="correlation-is-not-causation.html">
+     Correlation is not causation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="uncorrelated-does-not-imply-independent.html">
+     Two uncorrelated random variables are not necessarily independent
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="linear-regression-with-one-variable.html">
+     Linear regression with one variable
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="homework_14.html">
+     Homework 14
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../lecture15/intro.html">
+   Lecture 15: Linear regression
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+  <label for="toctree-checkbox-15">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture15/regression-with-one-variable-revisited.html">
+     Regression with one variable revisited
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture15/example-linear-regression.html">
+     Example: Linear regression with a single variable
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture15/polynomial-regression.html">
+     Polynomial Regression
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture15/the-generalized-linear-model.html">
+     The generalized linear model
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture15/regression-diagnostics.html">
+     Measures of Predictive Accuracy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture15/cross-validation.html">
+     Cross validation for selecting the number of basis functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture15/maximum-likelihood-interpretation.html">
+     Maximum likelihood interpretation of least squares
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture15/maximum-likelihood-example.html">
+     Example: Regression with estimated measurement noise
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture15/homework_15.html">
+     Homework 15
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../lecture16/intro.html">
+   Lecture 16: Classification via logistic regression
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+  <label for="toctree-checkbox-16">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture16/logistic-regression.html">
+     Logistic regression
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture16/example-logistic-regression-one-variable.html">
+     Example: Logistic regression with one variable (High melting explosives)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture16/example-logistic-regression-many-features.html">
+     Logistic regression with many features
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture16/classification-diagnostics.html">
+     Diagnostics for Classification
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture16/homework_16.html">
+     Homework 16
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../bibliography.html">
+   Bibliography
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/lecture14/correlation.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/lecture14/correlation.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/executablebooks/jupyter-book/blob/master/lecture14/correlation.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mathematical-definition-of-the-correlation-coefficient">
+   Mathematical definition of the correlation coefficient
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#property-1-the-correlation-coefficient-remains-unchanged-when-you-change-the-units-of-the-random-variables">
+     Property 1: The correlation coefficient remains unchanged when you change the units of the random variables
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#property-2-two-independent-random-variables-have-zero-correlation">
+   Property 2: Two independent random variables have zero correlation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#property-3-the-maximum-possible-correlation-between-two-random-variables-is-one">
+   Property 3: The maximum possible correlation between two random variables is one
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#property-4-the-minimum-possible-correlation-between-two-random-variables-is-minus-one">
+   Property 4: The minimum possible correlation between two random variables is minus one
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#summarizing-the-properties-of-the-correlation">
+   Summarizing the properties of the correlation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#empirical-estimation-of-the-correlation-coefficient">
+   Empirical estimation of the correlation coefficient
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#example-correlation-between-t-out-and-hvac-during-heating-cooling-and-off">
+   Example: Correlation between
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     t_out
+    </span>
+   </code>
+   and
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     hvac
+    </span>
+   </code>
+   during heating, cooling, and off
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="correlation-between-two-random-variables">
+<span id="lecture14-correlation"></span><h1>Correlation between two random variables<a class="headerlink" href="#correlation-between-two-random-variables" title="Permalink to this headline">¶</a></h1>
+<p>The covariance between two random variables <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(Y\)</span>, <span class="math notranslate nohighlight">\(\mathbf{C}[X,Y]\)</span>, is not an absolute measure.
+As a matter of fact the covariance has units of <span class="math notranslate nohighlight">\(X\)</span> times <span class="math notranslate nohighlight">\(Y\)</span>.
+So, if you change the units of <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(Y\)</span>, the covariance will change.
+Changing units of <span class="math notranslate nohighlight">\(X\)</span> is like defining a new random variable:</p>
+<div class="math notranslate nohighlight">
+\[
+X' = \lambda X.
+\]</div>
+<p>The covariance between <span class="math notranslate nohighlight">\(X'\)</span> and <span class="math notranslate nohighlight">\(Y\)</span> would be:</p>
+<div class="math notranslate nohighlight">
+\[
+\mathbf{C}[X',Y] = \mathbf{E}[(X'-\mu_{X'})(Y-\mu_Y)] = \mathbf{E}[(\lambda X - \lambda \mu_X)(Y-\mu_Y)] = \lambda \mathbf{E}[(X-\mu_X)(Y-\mu_Y)] = \lambda \mathbf{C}[X,Y]. 
+\]</div>
+<p>As an example, imagine that <span class="math notranslate nohighlight">\(X\)</span> was measured in meters and you wanted to change it units to centimeters.
+Then <span class="math notranslate nohighlight">\(\lambda = 100\)</span> and <span class="math notranslate nohighlight">\(X'=100X\)</span>.
+The covariance between the new variable <span class="math notranslate nohighlight">\(X'\)</span> and <span class="math notranslate nohighlight">\(Y\)</span> would be 100 times bigger!
+As I said, the covariance is not an absolute measure.</p>
+<p>How can we fix this?
+Well, we fix it using the concept of correlation.
+The correlation betwene two random variables <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(Y\)</span> is defined by:</p>
+<div class="section" id="mathematical-definition-of-the-correlation-coefficient">
+<h2>Mathematical definition of the correlation coefficient<a class="headerlink" href="#mathematical-definition-of-the-correlation-coefficient" title="Permalink to this headline">¶</a></h2>
+<p>The correlation coefficient between two random variables <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(Y\)</span> is defined to be the covariance between the two random variables divided by the product of their standard deviations, i.e,</p>
+<div class="math notranslate nohighlight">
+\[
+\rho(X,Y) = \frac{\mathbf{C}[X,Y]}{\sigma_X\sigma_Y}.
+\]</div>
+<p>where</p>
+<div class="math notranslate nohighlight">
+\[
+\sigma_X = \sqrt{\mathbf{V}[X]},
+\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[
+\sigma_Y = \sqrt{\mathbf{V}[Y]}.
+\]</div>
+<p>Alright, let’s see why this is a good measure by looking closely at some of its properties.</p>
+<div class="section" id="property-1-the-correlation-coefficient-remains-unchanged-when-you-change-the-units-of-the-random-variables">
+<h3>Property 1: The correlation coefficient remains unchanged when you change the units of the random variables<a class="headerlink" href="#property-1-the-correlation-coefficient-remains-unchanged-when-you-change-the-units-of-the-random-variables" title="Permalink to this headline">¶</a></h3>
+<p>Okay, this sounds good.
+Take the example we gave above:</p>
+<div class="math notranslate nohighlight">
+\[
+X' = \lambda X.
+\]</div>
+<p>We have already shown that:</p>
+<div class="math notranslate nohighlight">
+\[
+\mathbf{C}[X', Y] = \mathbf{C}[\lambda X, Y] = \lambda\mathbf{C}[X,Y].
+\]</div>
+<p>Notice that:</p>
+<div class="math notranslate nohighlight">
+\[
+\sigma_{X'} = \sqrt{\mathbf{V}[X']} = \sqrt{\mathbf{V}[\lambda X]} = 
+\sqrt{\lambda^2\mathbf{V}[X]} = \lambda\sqrt{\mathbf{V}[X]} = \lambda\sigma_X.
+\]</div>
+<p>So, we have:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{split}
+\rho(X', Y) &amp;= \frac{\mathbf{C}[X',Y]}{\sigma_{X'}\sigma_Y}\\
+&amp;= \frac{\lambda \mathbf{C}[X,Y]}{\lambda\sigma_{X}\sigma_Y}\\
+&amp;= \frac{\mathbf{C}[X,Y]}{\sigma_{X}\sigma_Y}\\
+&amp;= \rho(X,Y).
+\end{split}
+\end{split}\]</div>
+<p>That’s it. The correlation coefficient has absolute meaning.</p>
+</div>
+</div>
+<div class="section" id="property-2-two-independent-random-variables-have-zero-correlation">
+<h2>Property 2: Two independent random variables have zero correlation<a class="headerlink" href="#property-2-two-independent-random-variables-have-zero-correlation" title="Permalink to this headline">¶</a></h2>
+<p>This follows directly from the fact that the covariance between two independent random variables is zero.</p>
+</div>
+<div class="section" id="property-3-the-maximum-possible-correlation-between-two-random-variables-is-one">
+<h2>Property 3: The maximum possible correlation between two random variables is one<a class="headerlink" href="#property-3-the-maximum-possible-correlation-between-two-random-variables-is-one" title="Permalink to this headline">¶</a></h2>
+<p>This is nice!
+Why does it hold?
+Take a random variable <span class="math notranslate nohighlight">\(X\)</span>.
+What is the random variable <span class="math notranslate nohighlight">\(Y\)</span> that is the most correlated with <span class="math notranslate nohighlight">\(X\)</span>?
+Well, can you think of something more correlated than <span class="math notranslate nohighlight">\(Y=X\)</span>?
+I don’t think so…
+Let’s see what correlation coefficient we get when we plug in <span class="math notranslate nohighlight">\(Y=X\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{split}
+\rho(X,X) &amp;= \frac{\mathbf{C}[X,X]}{\sigma_X\sigma_X}\\
+&amp;= \frac{\mathbf{E}[(X-\mu_X)(X-\mu_X)]}{\sigma_X^2}\\
+&amp;= \frac{\mathbf{E}[(X-\mu_X)^2]}{\sigma_X^2}\\
+&amp;= \frac{\mathbf{V}[X]}{\sigma_X^2}\\
+&amp;= \frac{\sigma_X^2}{\sigma_X^2}\\
+&amp;= 1.
+\end{split}
+\end{split}\]</div>
+<p>Great! By the way, notice that we also showed that the covariance of a random variable with itself is the variance…</p>
+</div>
+<div class="section" id="property-4-the-minimum-possible-correlation-between-two-random-variables-is-minus-one">
+<h2>Property 4: The minimum possible correlation between two random variables is minus one<a class="headerlink" href="#property-4-the-minimum-possible-correlation-between-two-random-variables-is-minus-one" title="Permalink to this headline">¶</a></h2>
+<p>This proved in a similar manner as the previous property.
+What is the random variable <span class="math notranslate nohighlight">\(Y\)</span> that is most negatively correlated with <span class="math notranslate nohighlight">\(X\)</span>?
+It is <span class="math notranslate nohighlight">\(Y=-X\)</span>.
+If you plug this in the correlation formula, you will get:</p>
+<div class="math notranslate nohighlight">
+\[
+\rho(X,-X) = -1.
+\]</div>
+</div>
+<div class="section" id="summarizing-the-properties-of-the-correlation">
+<h2>Summarizing the properties of the correlation<a class="headerlink" href="#summarizing-the-properties-of-the-correlation" title="Permalink to this headline">¶</a></h2>
+<p>So, the correlation is a much better measure than the covariance when you want to assess how tow random variables vary together.
+You have the following possibilities.</p>
+<ul class="simple">
+<li><p>If the correlation is zero, then the two are uncorrelated. This doesn’t mean that they are independent though. It just means that they may be indpendent. We will elaborate on this later.</p></li>
+<li><p>The closer the correlation coefficient is to plus one, the more positively correlated the random variables are.</p></li>
+<li><p>The clsoer the correlation coefficient is to minus one, the more negatively correlated the random variables are.</p></li>
+</ul>
+</div>
+<div class="section" id="empirical-estimation-of-the-correlation-coefficient">
+<h2>Empirical estimation of the correlation coefficient<a class="headerlink" href="#empirical-estimation-of-the-correlation-coefficient" title="Permalink to this headline">¶</a></h2>
+<p>I have already told you how you can estimate the covariance.
+We can already estimate the standard deviations with averages:</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{\sigma}_X = \sqrt{\frac{1}{N}(x_i-\hat{\mu}_X)^2},
+\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{\sigma}_Y = \sqrt{\frac{1}{N}(y_i-\hat{\mu}_Y)^2}.
+\]</div>
+<p>So, our estimate for the correlation coefficient is:</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{\rho}_{X,Y} = \frac{\hat{\sigma}_{X,Y}}{\hat{\sigma}_X\hat{\sigma}_Y}.
+\]</div>
+</div>
+<div class="section" id="example-correlation-between-t-out-and-hvac-during-heating-cooling-and-off">
+<h2>Example: Correlation between <code class="docutils literal notranslate"><span class="pre">t_out</span></code> and <code class="docutils literal notranslate"><span class="pre">hvac</span></code> during heating, cooling, and off<a class="headerlink" href="#example-correlation-between-t-out-and-hvac-during-heating-cooling-and-off" title="Permalink to this headline">¶</a></h2>
+<p>Let’s now calculate the estimate we developed for the correlation coefficient in the smart buildings dataset.
+In particular, we are going to estimate the correlation coefficient between <span class="math notranslate nohighlight">\(X=\)</span><code class="docutils literal notranslate"><span class="pre">t_out</span></code> and <span class="math notranslate nohighlight">\(Y=\)</span><code class="docutils literal notranslate"><span class="pre">hvac</span></code> for the three regions considered.</p>
+<p>Again, we do not have to calculate it by hand.
+We can use built-in functionality of <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.corrcoef.html"><code class="docutils literal notranslate"><span class="pre">np.corrcoef</span></code></a>.
+Here is how.
+We start with cooling.</p>
+<div class="cell tag_hide-input tag_hide-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">scipy.stats</span> <span class="k">as</span> <span class="nn">st</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="k">def</span> <span class="nf">download</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">local_filename</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Downloads the file in the ``url`` and saves it in the current working directory.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">local_filename</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">local_filename</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">local_filename</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fd</span><span class="p">:</span>
+        <span class="n">fd</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+   
+<span class="c1"># The url of the file we want to download</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://raw.githubusercontent.com/PurdueMechanicalEngineering/me-297-intro-to-data-science/master/data/temperature_raw.xlsx&#39;</span>
+<span class="n">download</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s1">&#39;temperature_raw.xlsx&#39;</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<span class="n">df_heating</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;t_out&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">60</span><span class="p">]</span>
+<span class="n">df_cooling</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;t_out&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">70</span><span class="p">]</span>
+<span class="n">df_off</span> <span class="o">=</span> <span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;t_out&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">60</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;t_out&#39;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">70</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rho</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">corrcoef</span><span class="p">(</span><span class="n">df_cooling</span><span class="p">[</span><span class="s1">&#39;t_out&#39;</span><span class="p">],</span> <span class="n">df_cooling</span><span class="p">[</span><span class="s1">&#39;hvac&#39;</span><span class="p">])</span>
+<span class="n">rho</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[1.        , 0.24617791],
+       [0.24617791, 1.        ]])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notice that this is a matrix as well.
+It has the same format as the matrix returned by <code class="docutils literal notranslate"><span class="pre">np.cov</span></code>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">rho[0,</span> <span class="pre">0]</span></code> is the correlation coefficient between the first input (0 = <code class="docutils literal notranslate"><span class="pre">t_out</span></code>) and the first input (0 = <code class="docutils literal notranslate"><span class="pre">t_out</span></code>). So it has to be one always.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">rho[1,</span> <span class="pre">1]</span></code> is the correlation coefficient between the second input (1 = <code class="docutils literal notranslate"><span class="pre">hvac</span></code>) and the second input (1 = <code class="docutils literal notranslate"><span class="pre">hvac</span></code>). Again, it is always one.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">rho[0,</span> <span class="pre">1]</span></code> is the correlation coefficient between the first input (0 = <code class="docutils literal notranslate"><span class="pre">t_out</span></code>) and the second input (1 = <code class="docutils literal notranslate"><span class="pre">hvac</span></code>).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">rho[1,</span> <span class="pre">0]</span></code> is the correlation coefficient between the second input (1 = <code class="docutils literal notranslate"><span class="pre">hvac</span></code>) and the first input (0 = <code class="docutils literal notranslate"><span class="pre">t_out</span></code>). This is because the correlation coefficient is also symmetric.</p></li>
+</ul>
+<p>Okay. Here is what we were after:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;rho[&#39;t_out&#39;, &#39;hvac&#39;|cooling] = </span><span class="si">{0:1.2f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">rho</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>rho[&#39;t_out&#39;, &#39;hvac&#39;|cooling] = 0.25
+</pre></div>
+</div>
+</div>
+</div>
+<p>Nice and positive. But not very close to one.</p>
+<p>Now let’s do heating:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rho</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">corrcoef</span><span class="p">(</span><span class="n">df_heating</span><span class="p">[</span><span class="s1">&#39;t_out&#39;</span><span class="p">],</span> <span class="n">df_heating</span><span class="p">[</span><span class="s1">&#39;hvac&#39;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;rho[&#39;t_out&#39;, &#39;hvac&#39;|heating] = </span><span class="si">{0:1.2f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">rho</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>rho[&#39;t_out&#39;, &#39;hvac&#39;|heating] = -0.45
+</pre></div>
+</div>
+</div>
+</div>
+<p>This is negative as expected.
+And it is much closer to the minimum possible value (-1) than the cooling correlation coefficient is to the maximum value (+1).</p>
+<p>Finally, let’s do the off setting:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rho</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">corrcoef</span><span class="p">(</span><span class="n">df_off</span><span class="p">[</span><span class="s1">&#39;t_out&#39;</span><span class="p">],</span> <span class="n">df_off</span><span class="p">[</span><span class="s1">&#39;hvac&#39;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;rho[&#39;t_out&#39;, &#39;hvac&#39;|off] = </span><span class="si">{0:1.2f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">rho</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>rho[&#39;t_out&#39;, &#39;hvac&#39;|off] = -0.03
+</pre></div>
+</div>
+</div>
+</div>
+<p>This is tiny and we are happy because it is indepenent of the units we are using!</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./lecture14"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="covariance.html" title="previous page">Covariance between two random variables</a>
+    <a class='right-next' id="next-link" href="correlation-is-not-causation.html" title="next page">Correlation is not causation</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Ilias Bilionis<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

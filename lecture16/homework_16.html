@@ -1,0 +1,1319 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Homework 16 &#8212; Introduction to Data Science for Mechanical Engineers (Lecture Book)</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Bibliography" href="../bibliography.html" />
+    <link rel="prev" title="Diagnostics for Classification" href="classification-diagnostics.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      <h1 class="site-logo" id="site-title">Introduction to Data Science for Mechanical Engineers (Lecture Book)</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../index.html">
+   Preface
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../lecture01/intro.html">
+   Lecture 1: Introduction
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture01/what-is-data-science.html">
+     What is data science?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture01/cool-applications.html">
+     Some cool appliations of data science in mechanical engineering
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture01/python-intro.html">
+     Why Python?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture01/python-expressions.html">
+     Python expressions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture01/python-variables-and-types.html">
+     Python variables and types
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture01/homework_01.html">
+     Homework 1
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../lecture02/intro.html">
+   Lecture 2: Data arrays
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture02/python-tuples.html">
+     Python tuples
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture02/python-lists.html">
+     Python lists
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture02/python-numpy.html">
+     Numerical Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture02/homework_02.html">
+     Homework 2
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../lecture03/intro.html">
+   Lecture 3: Data loading and selection
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture03/python-matrices.html">
+     Matrices
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture03/python-csv-files.html">
+     Comma-separated values file format
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture03/python-pandas.html">
+     The Python data analysis library
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture03/homework_03.html">
+     Homework 3
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../lecture04/intro.html">
+   Lecture 4: Data visualization
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture04/python-plotting.html">
+     Plotting simple functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture04/python-plot-noisy.html">
+     Plotting noisy measurements
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture04/python-scatter.html">
+     Scatter plots
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture04/python-histograms.html">
+     Histograms
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture04/homework_04.html">
+     Homework 4
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../lecture05/intro.html">
+   Lecture 5: Functions, data manipulation, and models
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture05/python-strings.html">
+     Basics of strings
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture05/python-print.html">
+     The print function
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture05/python-functions.html">
+     Python functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture05/applying-functions-to-dataframes.html">
+     Applying functions to dataframes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture05/models-are-functions.html">
+     Models are functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture05/homework_05.html">
+     Homework 5
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../lecture06/intro.html">
+   Lecture 6: Conditionals and loops
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture06/python-conditionals.html">
+     Python conditionals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture06/python-loops.html">
+     Python loops
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture06/python-pandas-selections.html">
+     Selecting dataframe rows that satisfy a boolean expression
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture06/homework_06.html">
+     Homework 6
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../lecture07/intro.html">
+   Lecture 7: Probability as a measure of uncertainty
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture07/probability-and-state-of-knowledge.html">
+     Probability as a representation of our state of knowledge
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture07/probability-common-sense.html">
+     The common sense assumptions that give rise to the basic probability rules.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture07/principle-of-insufficient-reason.html">
+     The principle of insufficient reason
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture07/estimating-probabilities-by-simulation.html">
+     Estimating probabilities by simulation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture07/estimating-probabilities-from-data.html">
+     Estimating probabilities from data - Bootstrapping
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture07/homework_07.html">
+     Homework 7
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../lecture08/intro.html">
+   Lecture 8: The basic rules of probability
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture08/probability-rules.html">
+     The basic rules of probability
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture08/probability-urn-example.html">
+     Example - Drawing balls from a box without replacement
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture08/probability-of-disjunction.html">
+     Probability of logical disjunctions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture08/probability-sum-rule.html">
+     The sum rule
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture08/probability-urn-example-sum-rule.html">
+     Example - Drawing balls from a box without replacement (sum rule)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture08/probability-urn-example-information-flow.html">
+     Example - Drawing balls from a box without replacement (information flow)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture08/homework_08.html">
+     Homework 8
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../lecture09/intro.html">
+   Lecture 9: Discrete random variables
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture09/discrete-random-variables.html">
+     Discrete Random variables
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture09/probability-mass-function.html">
+     The probability mass function
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture09/the-bernoulli-distribution.html">
+     The Bernoulli distribution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture09/properties-of-the-probability-mass-function.html">
+     Properties of the probability mass function
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture09/the-categorical-distribution.html">
+     The Categorical distribution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture09/the-binomial-distribution.html">
+     The Binomial Distribution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture09/the-poisson-distribution.html">
+     The Poisson distribution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture09/homework_09.html">
+     Homework 9
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../lecture10/intro.html">
+   Lecture 10: Continuous random variables
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture10/continuous-random-variables.html">
+     Continuous random variables
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture10/example-manufacturing-steel-balls.html">
+     Example: Uncertainties in steel ball manufacturing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture10/cumulative-distribution-function.html">
+     The cumulative distribution function
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture10/probability-density-function.html">
+     The probability density function
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture10/the-uniform-distribution.html">
+     The uniform distribution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture10/homework_10.html">
+     Homework 10
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../lecture11/intro.html">
+   Lecture 11: Expectations, variances, and their properties
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture11/expectation-discrete-rv.html">
+     Expectation of discrete random variables
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture11/examples-expectation-of-discrete-rvs.html">
+     Examples of expectations of discrete random variables
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture11/expectation-continuous-rv.html">
+     Expectation of a continuous random variable
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture11/expectation-notation.html">
+     Simplifying our notation about expectations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture11/properties-of-expectations.html">
+     Properties of expectations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture11/variance.html">
+     Variance of a random variable
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture11/properties-of-variance.html">
+     Properties of variance
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture11/examples-variance.html">
+     Examples of variances of random variables
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture11/homework_11.html">
+     Homework 11
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../lecture12/intro.html">
+   Lecture 12: The Normal distribution, quantiles, and credible intervals
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture12/the-standard-normal.html">
+     The standard Normal distribution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture12/standard-normal-quantiles.html">
+     Quantiles of the standard Normal
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture12/the-normal.html">
+     The Normal distribution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture12/normal-quantiles.html">
+     Quantiles of the Normal
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture12/example-fitting-normals.html">
+     Fitting Normal distributions to data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture12/homework_12.html">
+     Homework 12
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../lecture13/intro.html">
+   Lecture 13: Fitting models with the principle of maximum likelihood
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <label for="toctree-checkbox-13">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture13/joint-probability-density-function.html">
+     The joint probability density function
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture13/repeated-experiments.html">
+     Repeated independent experiments
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture13/the-maximum-likelihood-principle.html">
+     The maximum likelihood principle
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture13/fitting-the-normal-with-maximum-likelihood.html">
+     Fitting the parameters of a Normal using the maximum likelihood principle
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture13/fitting-the-bernoulli.html">
+     Fitting the Bernoulli with maximum likelihood
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture13/predictive-checking.html">
+     Predictive checking
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture13/homework_13.html">
+     Homework 13
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../lecture14/intro.html">
+   Lecture 14: Covariance, correlation, and linear regression with one variable
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+  <label for="toctree-checkbox-14">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture14/covariance.html">
+     Covariance between two random variables
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture14/correlation.html">
+     Correlation between two random variables
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture14/correlation-is-not-causation.html">
+     Correlation is not causation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture14/uncorrelated-does-not-imply-independent.html">
+     Two uncorrelated random variables are not necessarily independent
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture14/linear-regression-with-one-variable.html">
+     Linear regression with one variable
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture14/homework_14.html">
+     Homework 14
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../lecture15/intro.html">
+   Lecture 15: Linear regression
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+  <label for="toctree-checkbox-15">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture15/regression-with-one-variable-revisited.html">
+     Regression with one variable revisited
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture15/example-linear-regression.html">
+     Example: Linear regression with a single variable
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture15/polynomial-regression.html">
+     Polynomial Regression
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture15/the-generalized-linear-model.html">
+     The generalized linear model
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture15/regression-diagnostics.html">
+     Measures of Predictive Accuracy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture15/cross-validation.html">
+     Cross validation for selecting the number of basis functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture15/maximum-likelihood-interpretation.html">
+     Maximum likelihood interpretation of least squares
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture15/maximum-likelihood-example.html">
+     Example: Regression with estimated measurement noise
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture15/homework_15.html">
+     Homework 15
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="intro.html">
+   Lecture 16: Classification via logistic regression
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+  <label for="toctree-checkbox-16">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="logistic-regression.html">
+     Logistic regression
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="example-logistic-regression-one-variable.html">
+     Example: Logistic regression with one variable (High melting explosives)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="example-logistic-regression-many-features.html">
+     Logistic regression with many features
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="classification-diagnostics.html">
+     Diagnostics for Classification
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Homework 16
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../bibliography.html">
+   Bibliography
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/lecture16/homework_16.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/lecture16/homework_16.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/executablebooks/jupyter-book/blob/master/lecture16/homework_16.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Homework 16
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#student-details">
+     Student details
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#problem-1-explaining-the-challenger-disaster">
+   Problem 1 - Explaining the Challenger disaster
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#part-a-perform-logistic-regression">
+     Part A - Perform logistic regression
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#part-b-plot-the-probability-of-damage-as-a-function-of-temperature">
+     Part B - Plot the probability of damage as a function of temperature
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#part-c-decide-whether-or-not-to-launch">
+     Part C - Decide whether or not to launch
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="homework-16">
+<span id="lecture16-homework"></span><h1>Homework 16<a class="headerlink" href="#homework-16" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Type your name and email in the “Student details” section below.</p></li>
+<li><p>Develop the code and generate the figures you need to solve the problems using this notebook.</p></li>
+<li><p>For the answers that require a mathematical proof or derivation you can either:</p>
+<ul>
+<li><p>Type the answer using the built-in latex capabilities. In this case, simply export the notebook as a pdf and upload it on gradescope; or</p></li>
+<li><p>You can print the notebook (after you are done with all the code), write your answers by hand, scan, turn your response to a single pdf, and upload on gradescope.</p></li>
+</ul>
+</li>
+<li><p>The total homework points are 100. Please note that the problems are not weighed equally.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>This is due before the beginning of the next lecture.</p></li>
+<li><p>Please match all the pages corresponding to each of the questions when you submit on gradescope.</p></li>
+</ul>
+</div>
+<div class="section" id="student-details">
+<h2>Student details<a class="headerlink" href="#student-details" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>First Name:</strong></p></li>
+<li><p><strong>Last Name:</strong></p></li>
+<li><p><strong>Email:</strong></p></li>
+</ul>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;figure.dpi&quot;</span><span class="p">:</span><span class="mi">100</span><span class="p">,</span> <span class="s1">&#39;savefig.dpi&#39;</span><span class="p">:</span><span class="mi">300</span><span class="p">})</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set_context</span><span class="p">(</span><span class="s1">&#39;notebook&#39;</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s2">&quot;ticks&quot;</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">set_matplotlib_formats</span>
+<span class="n">set_matplotlib_formats</span><span class="p">(</span><span class="s1">&#39;retina&#39;</span><span class="p">,</span> <span class="s1">&#39;svg&#39;</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">scipy.stats</span> <span class="k">as</span> <span class="nn">st</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="k">def</span> <span class="nf">download</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">local_filename</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Downloads the file in the ``url`` and saves it in the current working directory.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">local_filename</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">local_filename</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">local_filename</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fd</span><span class="p">:</span>
+        <span class="n">fd</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="problem-1-explaining-the-challenger-disaster">
+<h1>Problem 1 - Explaining the Challenger disaster<a class="headerlink" href="#problem-1-explaining-the-challenger-disaster" title="Permalink to this headline">¶</a></h1>
+<p>On January 28, 1986, the <a class="reference external" href="https://en.wikipedia.org/wiki/Space_Shuttle_Challenger_disaster">Space Shuttle Challenger</a> disintegrated after 73 seconds from launch.
+The failure can be traced on the rubber O-rings which were used to seal the joints of the solid rocket boosters (required to force the hot, high-pressure gases generated by the burning solid propelant through the nozzles thus producing thrust).</p>
+<p>It turns out that the performance of the O-ring material was particularly sensitive on the external temperature during launch.
+This <a class="reference external" href="https://raw.githubusercontent.com/PredictiveScienceLab/data-analytics-se/master/homework/challenger_data.csv">dataset</a> contains records of different experiments with O-rings recorded at various times between 1981 and 1986.
+Download the data the usual way (either put them on Google drive or run the code cell below).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://raw.githubusercontent.com/PurdueMechanicalEngineering/me-297-intro-to-data-science/master/data/challenger_data.csv&#39;</span>
+<span class="n">download</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Even though this is a csv file, you should load it with pandas because it contains some special characters.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">raw_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;challenger_data.csv&#39;</span><span class="p">)</span>
+<span class="n">raw_data</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Date</th>
+      <th>Temperature</th>
+      <th>Damage Incident</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>04/12/1981</td>
+      <td>66</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>11/12/1981</td>
+      <td>70</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3/22/82</td>
+      <td>69</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>6/27/82</td>
+      <td>80</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>01/11/1982</td>
+      <td>68</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>04/04/1983</td>
+      <td>67</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>6/18/83</td>
+      <td>72</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>8/30/83</td>
+      <td>73</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>11/28/83</td>
+      <td>70</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>02/03/1984</td>
+      <td>57</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>04/06/1984</td>
+      <td>63</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>8/30/84</td>
+      <td>70</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>10/05/1984</td>
+      <td>78</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>11/08/1984</td>
+      <td>67</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>1/24/85</td>
+      <td>53</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>04/12/1985</td>
+      <td>67</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>4/29/85</td>
+      <td>75</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>6/17/85</td>
+      <td>70</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>7/29/85</td>
+      <td>81</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>8/27/85</td>
+      <td>76</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>10/03/1985</td>
+      <td>79</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>10/30/85</td>
+      <td>75</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>11/26/85</td>
+      <td>76</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>01/12/1986</td>
+      <td>58</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>1/28/86</td>
+      <td>31</td>
+      <td>Challenger Accident</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>The first column is the date of the record. The second column is the external temperature of that day in degrees F.
+The third column labeled <code class="docutils literal notranslate"><span class="pre">Damage</span> <span class="pre">Incident</span></code> is has a binary coding (0=no damage, 1=damage).
+The very last row is the day of the Challenger accident.</p>
+<p>We are going to use the first 23 rows to solve a binary classification problem that will give us the probability of an accident conditioned on the observed external temperature in degrees F. Before we proceed to the analysis of the data, let’s clean the data up.</p>
+<p>First, we drop all the bad records:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We also don’t need the last record. Just remember that the temperature the day of the Challenger accident was 31 degrees F.
+Remove the last record from the dataframe.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here</span>
+<span class="n">clean_data</span> <span class="o">=</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s extract the features and the labels:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">clean_data</span><span class="p">[</span><span class="s1">&#39;Temperature&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">x</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="n">clean_data</span><span class="p">[</span><span class="s1">&#39;Damage Incident&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int</span><span class="p">)</span>
+<span class="n">y</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="part-a-perform-logistic-regression">
+<h2>Part A - Perform logistic regression<a class="headerlink" href="#part-a-perform-logistic-regression" title="Permalink to this headline">¶</a></h2>
+<p>Perform logistic regression between the temperature (<span class="math notranslate nohighlight">\(x\)</span>) and the damage label (<span class="math notranslate nohighlight">\(y\)</span>).
+Do not bother doing a validation because there are not a lot of data.
+Just use a very simple model so that you don’t overfit.</p>
+<p><strong>Answer:</strong>
+This is one of the cases, where we don’t have a lot of data.
+So we are going to use everything for training.
+To avoid overfitting, we will use the simplest possible model.
+The model is:
+$<span class="math notranslate nohighlight">\(
+p(y|x,w) = \operatorname{sigm}(w_0 + w_1 x),
+\)</span><span class="math notranslate nohighlight">\(
+where \)</span>w_0<span class="math notranslate nohighlight">\( and \)</span>w_1$ are parameters to be determined by data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This is it. Let’s take a look at the parameters that that were found:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We observe a negative correlation between temperature and damage. Damage becomes more probable as temperature decreases.</p>
+</div>
+<div class="section" id="part-b-plot-the-probability-of-damage-as-a-function-of-temperature">
+<h2>Part B - Plot the probability of damage as a function of temperature<a class="headerlink" href="#part-b-plot-the-probability-of-damage-as-a-function-of-temperature" title="Permalink to this headline">¶</a></h2>
+<p>Plot the probability of damage as a function of temperature.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="part-c-decide-whether-or-not-to-launch">
+<h2>Part C - Decide whether or not to launch<a class="headerlink" href="#part-c-decide-whether-or-not-to-launch" title="Permalink to this headline">¶</a></h2>
+<p>The temperature the day of the Challenger accident was 31 degrees F.
+Would you go ahead with the launch or not?
+Hint: Start by calculating the probability of damage at 31 degrees F.</p>
+<p><em>Your answer here. As many code and text blocks as you need.</em></p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./lecture16"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="classification-diagnostics.html" title="previous page">Diagnostics for Classification</a>
+    <a class='right-next' id="next-link" href="../bibliography.html" title="next page">Bibliography</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Ilias Bilionis<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

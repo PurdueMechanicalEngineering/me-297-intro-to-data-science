@@ -1,0 +1,4128 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Python data analysis library &#8212; Introduction to Data Science for Mechanical Engineers (Lecture Book)</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Homework 3" href="homework_03.html" />
+    <link rel="prev" title="Comma-separated values file format" href="python-csv-files.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      <h1 class="site-logo" id="site-title">Introduction to Data Science for Mechanical Engineers (Lecture Book)</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../index.html">
+   Preface
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../lecture01/intro.html">
+   Lecture 1: Introduction
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture01/what-is-data-science.html">
+     What is data science?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture01/cool-applications.html">
+     Some cool appliations of data science in mechanical engineering
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture01/python-intro.html">
+     Why Python?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture01/python-expressions.html">
+     Python expressions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture01/python-variables-and-types.html">
+     Python variables and types
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture01/homework_01.html">
+     Homework 1
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../lecture02/intro.html">
+   Lecture 2: Data arrays
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture02/python-tuples.html">
+     Python tuples
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture02/python-lists.html">
+     Python lists
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture02/python-numpy.html">
+     Numerical Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture02/homework_02.html">
+     Homework 2
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="intro.html">
+   Lecture 3: Data loading and selection
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="python-matrices.html">
+     Matrices
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python-csv-files.html">
+     Comma-separated values file format
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     The Python data analysis library
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="homework_03.html">
+     Homework 3
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../lecture04/intro.html">
+   Lecture 4: Data visualization
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture04/python-plotting.html">
+     Plotting simple functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture04/python-plot-noisy.html">
+     Plotting noisy measurements
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture04/python-scatter.html">
+     Scatter plots
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture04/python-histograms.html">
+     Histograms
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture04/homework_04.html">
+     Homework 4
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../lecture05/intro.html">
+   Lecture 5: Functions, data manipulation, and models
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture05/python-strings.html">
+     Basics of strings
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture05/python-print.html">
+     The print function
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture05/python-functions.html">
+     Python functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture05/applying-functions-to-dataframes.html">
+     Applying functions to dataframes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture05/models-are-functions.html">
+     Models are functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture05/homework_05.html">
+     Homework 5
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../lecture06/intro.html">
+   Lecture 6: Conditionals and loops
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture06/python-conditionals.html">
+     Python conditionals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture06/python-loops.html">
+     Python loops
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture06/python-pandas-selections.html">
+     Selecting dataframe rows that satisfy a boolean expression
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture06/homework_06.html">
+     Homework 6
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../lecture07/intro.html">
+   Lecture 7: Probability as a measure of uncertainty
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture07/probability-and-state-of-knowledge.html">
+     Probability as a representation of our state of knowledge
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture07/probability-common-sense.html">
+     The common sense assumptions that give rise to the basic probability rules.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture07/principle-of-insufficient-reason.html">
+     The principle of insufficient reason
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture07/estimating-probabilities-by-simulation.html">
+     Estimating probabilities by simulation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture07/estimating-probabilities-from-data.html">
+     Estimating probabilities from data - Bootstrapping
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture07/homework_07.html">
+     Homework 7
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../lecture08/intro.html">
+   Lecture 8: The basic rules of probability
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture08/probability-rules.html">
+     The basic rules of probability
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture08/probability-urn-example.html">
+     Example - Drawing balls from a box without replacement
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture08/probability-of-disjunction.html">
+     Probability of logical disjunctions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture08/probability-sum-rule.html">
+     The sum rule
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture08/probability-urn-example-sum-rule.html">
+     Example - Drawing balls from a box without replacement (sum rule)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture08/probability-urn-example-information-flow.html">
+     Example - Drawing balls from a box without replacement (information flow)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture08/homework_08.html">
+     Homework 8
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../lecture09/intro.html">
+   Lecture 9: Discrete random variables
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture09/discrete-random-variables.html">
+     Discrete Random variables
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture09/probability-mass-function.html">
+     The probability mass function
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture09/the-bernoulli-distribution.html">
+     The Bernoulli distribution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture09/properties-of-the-probability-mass-function.html">
+     Properties of the probability mass function
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture09/the-categorical-distribution.html">
+     The Categorical distribution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture09/the-binomial-distribution.html">
+     The Binomial Distribution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture09/the-poisson-distribution.html">
+     The Poisson distribution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture09/homework_09.html">
+     Homework 9
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../lecture10/intro.html">
+   Lecture 10: Continuous random variables
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture10/continuous-random-variables.html">
+     Continuous random variables
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture10/example-manufacturing-steel-balls.html">
+     Example: Uncertainties in steel ball manufacturing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture10/cumulative-distribution-function.html">
+     The cumulative distribution function
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture10/probability-density-function.html">
+     The probability density function
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture10/the-uniform-distribution.html">
+     The uniform distribution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture10/homework_10.html">
+     Homework 10
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../lecture11/intro.html">
+   Lecture 11: Expectations, variances, and their properties
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture11/expectation-discrete-rv.html">
+     Expectation of discrete random variables
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture11/examples-expectation-of-discrete-rvs.html">
+     Examples of expectations of discrete random variables
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture11/expectation-continuous-rv.html">
+     Expectation of a continuous random variable
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture11/expectation-notation.html">
+     Simplifying our notation about expectations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture11/properties-of-expectations.html">
+     Properties of expectations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture11/variance.html">
+     Variance of a random variable
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture11/properties-of-variance.html">
+     Properties of variance
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture11/examples-variance.html">
+     Examples of variances of random variables
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture11/homework_11.html">
+     Homework 11
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../lecture12/intro.html">
+   Lecture 12: The Normal distribution, quantiles, and credible intervals
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture12/the-standard-normal.html">
+     The standard Normal distribution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture12/standard-normal-quantiles.html">
+     Quantiles of the standard Normal
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture12/the-normal.html">
+     The Normal distribution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture12/normal-quantiles.html">
+     Quantiles of the Normal
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture12/example-fitting-normals.html">
+     Fitting Normal distributions to data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture12/homework_12.html">
+     Homework 12
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../lecture13/intro.html">
+   Lecture 13: Fitting models with the principle of maximum likelihood
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <label for="toctree-checkbox-13">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture13/joint-probability-density-function.html">
+     The joint probability density function
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture13/repeated-experiments.html">
+     Repeated independent experiments
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture13/the-maximum-likelihood-principle.html">
+     The maximum likelihood principle
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture13/fitting-the-normal-with-maximum-likelihood.html">
+     Fitting the parameters of a Normal using the maximum likelihood principle
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture13/fitting-the-bernoulli.html">
+     Fitting the Bernoulli with maximum likelihood
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture13/predictive-checking.html">
+     Predictive checking
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture13/homework_13.html">
+     Homework 13
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../lecture14/intro.html">
+   Lecture 14: Covariance, correlation, and linear regression with one variable
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+  <label for="toctree-checkbox-14">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture14/covariance.html">
+     Covariance between two random variables
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture14/correlation.html">
+     Correlation between two random variables
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture14/correlation-is-not-causation.html">
+     Correlation is not causation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture14/uncorrelated-does-not-imply-independent.html">
+     Two uncorrelated random variables are not necessarily independent
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture14/linear-regression-with-one-variable.html">
+     Linear regression with one variable
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture14/homework_14.html">
+     Homework 14
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../lecture15/intro.html">
+   Lecture 15: Linear regression
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+  <label for="toctree-checkbox-15">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture15/regression-with-one-variable-revisited.html">
+     Regression with one variable revisited
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture15/example-linear-regression.html">
+     Example: Linear regression with a single variable
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture15/polynomial-regression.html">
+     Polynomial Regression
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture15/the-generalized-linear-model.html">
+     The generalized linear model
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture15/regression-diagnostics.html">
+     Measures of Predictive Accuracy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture15/cross-validation.html">
+     Cross validation for selecting the number of basis functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture15/maximum-likelihood-interpretation.html">
+     Maximum likelihood interpretation of least squares
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture15/maximum-likelihood-example.html">
+     Example: Regression with estimated measurement noise
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture15/homework_15.html">
+     Homework 15
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../lecture16/intro.html">
+   Lecture 16: Classification via logistic regression
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+  <label for="toctree-checkbox-16">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture16/logistic-regression.html">
+     Logistic regression
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture16/example-logistic-regression-one-variable.html">
+     Example: Logistic regression with one variable (High melting explosives)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture16/example-logistic-regression-many-features.html">
+     Logistic regression with many features
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture16/classification-diagnostics.html">
+     Diagnostics for Classification
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lecture16/homework_16.html">
+     Homework 16
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../bibliography.html">
+   Bibliography
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/lecture03/python-pandas.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/lecture03/python-pandas.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/executablebooks/jupyter-book/blob/master/lecture03/python-pandas.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pandas-introduction">
+   Pandas introduction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#loading-files">
+   Loading files
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dataset">
+   Dataset
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#observations-from-the-dataset-so-far">
+   Observations from the dataset so far
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#printing-specific-ranges">
+   Printing specific ranges
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#cleaning-the-data">
+   Cleaning the data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#questions">
+   Questions
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="the-python-data-analysis-library">
+<span id="lecture03-pandas"></span><h1>The Python data analysis library<a class="headerlink" href="#the-python-data-analysis-library" title="Permalink to this headline">¶</a></h1>
+<p>Special thanks to <a class="reference external" href="https://www.predictivesciencelab.org/authors/vanessa/">Vanessa Kwarteng</a> for putting this Jupyter notebook together.</p>
+<div class="section" id="pandas-introduction">
+<h2>Pandas introduction<a class="headerlink" href="#pandas-introduction" title="Permalink to this headline">¶</a></h2>
+<p>Pandas is Python package that provides fast, flexible and data structures that lets you work real life data quickly. More information about the pandas package can be found <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/getting_started/overview.html">here</a></p>
+<p>In order to use pandas in python we need to import the library into the notebook, as shown in the following cell.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="loading-files">
+<h2>Loading files<a class="headerlink" href="#loading-files" title="Permalink to this headline">¶</a></h2>
+<p>If we want to look at data we have collected for a project or experiment, we need to upload that data into jupyter notebook. To do this we can import the file using a <code class="docutils literal notranslate"><span class="pre">pandas</span></code> command. Pandas is able to read various types of files, in this activity we will be using pandas to read a <a class="reference external" href="https://en.wikipedia.org/wiki/Comma-separated_values">csv (comma separated values) file</a>.</p>
+<p>To import the csv file in Python we use the following command <code class="docutils literal notranslate"><span class="pre">pandas.read_csv</span></code>. In Python there are some common shorthand we can use, <code class="docutils literal notranslate"><span class="pre">pandas</span></code> is typically shorten to <code class="docutils literal notranslate"><span class="pre">pd</span></code>. So we will use <code class="docutils literal notranslate"><span class="pre">pd.read_csv</span></code> to import the data file that we will work with.</p>
+</div>
+<div class="section" id="dataset">
+<h2>Dataset<a class="headerlink" href="#dataset" title="Permalink to this headline">¶</a></h2>
+<p>Scenario: A researcher wants to gain some insight about energy usage in apartment homes in a community and provide a grade for each apartments energy usage. The dataset <code class="docutils literal notranslate"><span class="pre">temp_price.csv</span></code> that you are given contains HVAC energy usage data collected from 50 apartment homes in one day</p>
+<ul class="simple">
+<li><p>The apartment ID number (household)</p></li>
+<li><p>The outdoor temperature for the day (t_out)</p></li>
+<li><p>The indoor temperature of the apartment for the day (t_unit)</p></li>
+<li><p>The amount of kwh consumed by the HVAC system for the day (hvac)</p></li>
+<li><p>The price per kwh used (price)</p></li>
+<li><p>The price per week for using the hvac (Price per week)</p></li>
+<li><p>The price per day for using the hvac (Price per day)</p></li>
+</ul>
+<p>Let’s import the data to explore. This dataset is small, so that you will be able to see the changes you are making in order to become comfortable with cleaning data. In the future you will work with larger sized data sets.</p>
+<p>The dataset can be accessed in this link:</p>
+<p><a class="reference external" href="https://raw.githubusercontent.com/PurdueMechanicalEngineering/me-297-intro-to-data-science/master/activities/temp_price.csv">https://raw.githubusercontent.com/PurdueMechanicalEngineering/me-297-intro-to-data-science/master/activities/temp_price.csv</a></p>
+<p>If you run the book content on your PC, then all you have to do is to download this file and put it in the same directory as the book.
+If you work on Google Colab things are a bit more complicated.
+We will show you how to do it later in the homework problems.
+For now, let us just sprinkle some magick code that downloads the file and puts it in a spot that Google Colab can see:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="k">def</span> <span class="nf">download</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">local_filename</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Downloads the file in the ``url`` and saves it in the current working directory.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">local_filename</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">local_filename</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">local_filename</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fd</span><span class="p">:</span>
+        <span class="n">fd</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+   
+<span class="c1"># The url of the file we want to download</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://raw.githubusercontent.com/PurdueMechanicalEngineering/me-297-intro-to-data-science/master/data/temp_price.csv&#39;</span>
+<span class="n">download</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now you should have access to the <code class="docutils literal notranslate"><span class="pre">temp_price.csv</span></code> file from within this notebook and the following code should work:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">temp_price</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;temp_price.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s see the contents:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">temp_price</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>household</th>
+      <th>date</th>
+      <th>score</th>
+      <th>t_out</th>
+      <th>t_unit</th>
+      <th>hvac</th>
+      <th>price</th>
+      <th>Price per week</th>
+      <th>Price per day</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>a1</td>
+      <td>2019-01-06</td>
+      <td>85</td>
+      <td>38.599231</td>
+      <td>71.580704</td>
+      <td>35.113758</td>
+      <td>0.17303</td>
+      <td>6.075734</td>
+      <td>0.867962</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>a10</td>
+      <td>2019-01-06</td>
+      <td>70</td>
+      <td>38.599231</td>
+      <td>73.286260</td>
+      <td>63.949057</td>
+      <td>0.17303</td>
+      <td>11.065105</td>
+      <td>1.580729</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>a11</td>
+      <td>2019-01-06</td>
+      <td>61</td>
+      <td>38.599231</td>
+      <td>74.252046</td>
+      <td>147.612108</td>
+      <td>0.17303</td>
+      <td>25.541323</td>
+      <td>3.648760</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>a12</td>
+      <td>2019-01-06</td>
+      <td>65</td>
+      <td>38.599231</td>
+      <td>73.708482</td>
+      <td>74.394518</td>
+      <td>0.17303</td>
+      <td>12.872483</td>
+      <td>1.838926</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>a13</td>
+      <td>2019-01-06</td>
+      <td>66</td>
+      <td>38.599231</td>
+      <td>73.549554</td>
+      <td>173.095836</td>
+      <td>0.17303</td>
+      <td>29.950772</td>
+      <td>4.278682</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>a14</td>
+      <td>2019-01-06</td>
+      <td>84</td>
+      <td>38.599231</td>
+      <td>72.346457</td>
+      <td>7.040034</td>
+      <td>0.17303</td>
+      <td>1.218137</td>
+      <td>0.174020</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>a15</td>
+      <td>2019-01-06</td>
+      <td>1</td>
+      <td>38.599231</td>
+      <td>81.478472</td>
+      <td>639.959855</td>
+      <td>0.17303</td>
+      <td>110.732254</td>
+      <td>15.818893</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>a16</td>
+      <td>2019-01-06</td>
+      <td>25</td>
+      <td>38.599231</td>
+      <td>76.784504</td>
+      <td>616.805501</td>
+      <td>0.17303</td>
+      <td>106.725856</td>
+      <td>15.246551</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>a2</td>
+      <td>2019-01-06</td>
+      <td>74</td>
+      <td>38.599231</td>
+      <td>73.160367</td>
+      <td>322.648083</td>
+      <td>0.17303</td>
+      <td>55.827798</td>
+      <td>7.975400</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>a3</td>
+      <td>2019-01-06</td>
+      <td>55</td>
+      <td>38.599231</td>
+      <td>74.025149</td>
+      <td>95.139840</td>
+      <td>0.17303</td>
+      <td>16.462047</td>
+      <td>2.351721</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>a4</td>
+      <td>2019-01-06</td>
+      <td>99</td>
+      <td>38.599231</td>
+      <td>71.391270</td>
+      <td>0.000000</td>
+      <td>0.17303</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>a5</td>
+      <td>2019-01-06</td>
+      <td>78</td>
+      <td>38.599231</td>
+      <td>76.724752</td>
+      <td>70.942532</td>
+      <td>0.17303</td>
+      <td>12.275186</td>
+      <td>1.753598</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>a6</td>
+      <td>2019-01-06</td>
+      <td>44</td>
+      <td>38.599231</td>
+      <td>74.787475</td>
+      <td>67.350034</td>
+      <td>0.17303</td>
+      <td>11.653576</td>
+      <td>1.664797</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>a7</td>
+      <td>2019-01-06</td>
+      <td>62</td>
+      <td>38.599231</td>
+      <td>76.071354</td>
+      <td>71.177988</td>
+      <td>0.17303</td>
+      <td>12.315927</td>
+      <td>1.759418</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>a8</td>
+      <td>2019-01-06</td>
+      <td>65</td>
+      <td>38.599231</td>
+      <td>73.935665</td>
+      <td>50.812378</td>
+      <td>0.17303</td>
+      <td>8.792066</td>
+      <td>1.256009</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>a9</td>
+      <td>2019-01-06</td>
+      <td>51</td>
+      <td>38.599231</td>
+      <td>75.807242</td>
+      <td>108.091675</td>
+      <td>0.17303</td>
+      <td>18.703103</td>
+      <td>2.671872</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>b17</td>
+      <td>2019-01-06</td>
+      <td>66</td>
+      <td>38.599231</td>
+      <td>72.950992</td>
+      <td>130.509717</td>
+      <td>0.17303</td>
+      <td>22.582096</td>
+      <td>3.226014</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>b18</td>
+      <td>2019-01-06</td>
+      <td>90</td>
+      <td>38.599231</td>
+      <td>70.947520</td>
+      <td>60.078379</td>
+      <td>0.17303</td>
+      <td>10.395362</td>
+      <td>1.485052</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>b19</td>
+      <td>2019-01-06</td>
+      <td>30</td>
+      <td>38.599231</td>
+      <td>74.636062</td>
+      <td>0.000000</td>
+      <td>0.17303</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>b20</td>
+      <td>2019-01-06</td>
+      <td>93</td>
+      <td>38.599231</td>
+      <td>75.286905</td>
+      <td>21.320244</td>
+      <td>0.17303</td>
+      <td>3.689042</td>
+      <td>0.527006</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>b21</td>
+      <td>2019-01-06</td>
+      <td>16</td>
+      <td>38.599231</td>
+      <td>75.749281</td>
+      <td>0.000000</td>
+      <td>0.17303</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>b22</td>
+      <td>2019-01-06</td>
+      <td>54</td>
+      <td>38.599231</td>
+      <td>78.609127</td>
+      <td>93.928528</td>
+      <td>0.17303</td>
+      <td>16.252453</td>
+      <td>2.321779</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>b23</td>
+      <td>2019-01-06</td>
+      <td>42</td>
+      <td>38.599231</td>
+      <td>78.693750</td>
+      <td>66.335020</td>
+      <td>0.17303</td>
+      <td>11.477949</td>
+      <td>1.639707</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>b24</td>
+      <td>2019-01-06</td>
+      <td>89</td>
+      <td>38.599231</td>
+      <td>73.677604</td>
+      <td>68.989156</td>
+      <td>0.17303</td>
+      <td>11.937194</td>
+      <td>1.705313</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>b25</td>
+      <td>2019-01-06</td>
+      <td>45</td>
+      <td>38.599231</td>
+      <td>77.909474</td>
+      <td>101.537204</td>
+      <td>0.17303</td>
+      <td>17.568982</td>
+      <td>2.509855</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>b26</td>
+      <td>2019-01-06</td>
+      <td>57</td>
+      <td>38.599231</td>
+      <td>75.206448</td>
+      <td>122.327846</td>
+      <td>0.17303</td>
+      <td>21.166387</td>
+      <td>3.023770</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>b27</td>
+      <td>2019-01-06</td>
+      <td>-100</td>
+      <td>38.599231</td>
+      <td>-100.000000</td>
+      <td>NaN</td>
+      <td>0.17303</td>
+      <td>0.000000</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>b28</td>
+      <td>2019-01-06</td>
+      <td>48</td>
+      <td>38.599231</td>
+      <td>71.536830</td>
+      <td>39.719913</td>
+      <td>0.17303</td>
+      <td>6.872737</td>
+      <td>0.981820</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>b29</td>
+      <td>2019-01-06</td>
+      <td>82</td>
+      <td>38.599231</td>
+      <td>72.493794</td>
+      <td>73.090187</td>
+      <td>0.17303</td>
+      <td>12.646795</td>
+      <td>1.806685</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>b30</td>
+      <td>2019-01-06</td>
+      <td>83</td>
+      <td>38.599231</td>
+      <td>77.639881</td>
+      <td>17.972378</td>
+      <td>0.17303</td>
+      <td>3.109761</td>
+      <td>0.444252</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>b31</td>
+      <td>2019-01-06</td>
+      <td>95</td>
+      <td>38.599231</td>
+      <td>70.905208</td>
+      <td>55.940869</td>
+      <td>0.17303</td>
+      <td>9.679448</td>
+      <td>1.382778</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>b32</td>
+      <td>2019-01-06</td>
+      <td>-100</td>
+      <td>38.599231</td>
+      <td>-100.000000</td>
+      <td>NaN</td>
+      <td>0.17303</td>
+      <td>0.000000</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>b33</td>
+      <td>2019-01-06</td>
+      <td>85</td>
+      <td>38.599231</td>
+      <td>72.888294</td>
+      <td>35.809398</td>
+      <td>0.17303</td>
+      <td>6.196100</td>
+      <td>0.885157</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>c34</td>
+      <td>2019-01-06</td>
+      <td>-100</td>
+      <td>38.599231</td>
+      <td>-100.000000</td>
+      <td>NaN</td>
+      <td>0.17303</td>
+      <td>0.000000</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>34</th>
+      <td>c35</td>
+      <td>2019-01-06</td>
+      <td>92</td>
+      <td>38.599231</td>
+      <td>70.424206</td>
+      <td>63.946396</td>
+      <td>0.17303</td>
+      <td>11.064645</td>
+      <td>1.580664</td>
+    </tr>
+    <tr>
+      <th>35</th>
+      <td>c36</td>
+      <td>2019-01-06</td>
+      <td>47</td>
+      <td>38.599231</td>
+      <td>76.082391</td>
+      <td>104.719999</td>
+      <td>0.17303</td>
+      <td>18.119701</td>
+      <td>2.588529</td>
+    </tr>
+    <tr>
+      <th>36</th>
+      <td>c37</td>
+      <td>2019-01-06</td>
+      <td>58</td>
+      <td>38.599231</td>
+      <td>74.256548</td>
+      <td>41.795780</td>
+      <td>0.17303</td>
+      <td>7.231924</td>
+      <td>1.033132</td>
+    </tr>
+    <tr>
+      <th>37</th>
+      <td>c38</td>
+      <td>2019-01-06</td>
+      <td>38</td>
+      <td>38.599231</td>
+      <td>74.836905</td>
+      <td>63.938661</td>
+      <td>0.17303</td>
+      <td>11.063306</td>
+      <td>1.580472</td>
+    </tr>
+    <tr>
+      <th>38</th>
+      <td>c39</td>
+      <td>2019-01-06</td>
+      <td>56</td>
+      <td>38.599231</td>
+      <td>73.872272</td>
+      <td>68.115254</td>
+      <td>0.17303</td>
+      <td>11.785982</td>
+      <td>1.683712</td>
+    </tr>
+    <tr>
+      <th>39</th>
+      <td>c40</td>
+      <td>2019-01-06</td>
+      <td>66</td>
+      <td>38.599231</td>
+      <td>75.579861</td>
+      <td>114.096389</td>
+      <td>0.17303</td>
+      <td>19.742098</td>
+      <td>2.820300</td>
+    </tr>
+    <tr>
+      <th>40</th>
+      <td>c41</td>
+      <td>2019-01-06</td>
+      <td>90</td>
+      <td>38.599231</td>
+      <td>69.140749</td>
+      <td>0.000000</td>
+      <td>0.17303</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>41</th>
+      <td>c42</td>
+      <td>2019-01-06</td>
+      <td>-100</td>
+      <td>38.599231</td>
+      <td>-100.000000</td>
+      <td>NaN</td>
+      <td>0.17303</td>
+      <td>0.000000</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>42</th>
+      <td>c43</td>
+      <td>2019-01-06</td>
+      <td>38</td>
+      <td>38.599231</td>
+      <td>78.054390</td>
+      <td>136.530552</td>
+      <td>0.17303</td>
+      <td>23.623881</td>
+      <td>3.374840</td>
+    </tr>
+    <tr>
+      <th>43</th>
+      <td>c44</td>
+      <td>2019-01-06</td>
+      <td>28</td>
+      <td>38.599231</td>
+      <td>78.211012</td>
+      <td>170.058540</td>
+      <td>0.17303</td>
+      <td>29.425229</td>
+      <td>4.203604</td>
+    </tr>
+    <tr>
+      <th>44</th>
+      <td>c45</td>
+      <td>2019-01-06</td>
+      <td>66</td>
+      <td>38.599231</td>
+      <td>74.781052</td>
+      <td>197.492980</td>
+      <td>0.17303</td>
+      <td>34.172210</td>
+      <td>4.881744</td>
+    </tr>
+    <tr>
+      <th>45</th>
+      <td>c46</td>
+      <td>2019-01-06</td>
+      <td>76</td>
+      <td>38.599231</td>
+      <td>72.913740</td>
+      <td>124.591415</td>
+      <td>0.17303</td>
+      <td>21.558053</td>
+      <td>3.079722</td>
+    </tr>
+    <tr>
+      <th>46</th>
+      <td>c47</td>
+      <td>2019-01-06</td>
+      <td>74</td>
+      <td>38.599231</td>
+      <td>72.846354</td>
+      <td>84.631154</td>
+      <td>0.17303</td>
+      <td>14.643729</td>
+      <td>2.091961</td>
+    </tr>
+    <tr>
+      <th>47</th>
+      <td>c48</td>
+      <td>2019-01-06</td>
+      <td>53</td>
+      <td>38.599231</td>
+      <td>74.623562</td>
+      <td>279.324525</td>
+      <td>0.17303</td>
+      <td>48.331523</td>
+      <td>6.904503</td>
+    </tr>
+    <tr>
+      <th>48</th>
+      <td>c49</td>
+      <td>2019-01-06</td>
+      <td>71</td>
+      <td>38.599231</td>
+      <td>72.767163</td>
+      <td>51.483217</td>
+      <td>0.17303</td>
+      <td>8.908141</td>
+      <td>1.272592</td>
+    </tr>
+    <tr>
+      <th>49</th>
+      <td>c50</td>
+      <td>2019-01-06</td>
+      <td>52</td>
+      <td>38.599231</td>
+      <td>75.673562</td>
+      <td>87.482236</td>
+      <td>0.17303</td>
+      <td>15.137051</td>
+      <td>2.162436</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Notice the the format is much nicer than a numpy array.</p>
+</div>
+<div class="section" id="observations-from-the-dataset-so-far">
+<h2>Observations from the dataset so far<a class="headerlink" href="#observations-from-the-dataset-so-far" title="Permalink to this headline">¶</a></h2>
+<p>The very first column is the index of each entry. Notice how python counts the rows, it starts with 0 and not 1. This is different than other programming softwares that start counting from 1. Then you have columns with various names. The first column is the “household” id, then the “date,” etc.</p>
+<p>Let’s continue to explore the data. The following function gives you a summary of the satistics of the data:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">temp_price</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>score</th>
+      <th>t_out</th>
+      <th>t_unit</th>
+      <th>hvac</th>
+      <th>price</th>
+      <th>Price per week</th>
+      <th>Price per day</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>50.000000</td>
+      <td>5.000000e+01</td>
+      <td>50.000000</td>
+      <td>46.000000</td>
+      <td>5.000000e+01</td>
+      <td>50.000000</td>
+      <td>46.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>49.300000</td>
+      <td>3.859923e+01</td>
+      <td>60.521694</td>
+      <td>109.128242</td>
+      <td>1.730300e-01</td>
+      <td>17.371863</td>
+      <td>2.697494</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>49.351405</td>
+      <td>2.871026e-14</td>
+      <td>47.875493</td>
+      <td>129.874146</td>
+      <td>8.411210e-17</td>
+      <td>22.148354</td>
+      <td>3.210303</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>-100.000000</td>
+      <td>3.859923e+01</td>
+      <td>-100.000000</td>
+      <td>0.000000</td>
+      <td>1.730300e-01</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>44.250000</td>
+      <td>3.859923e+01</td>
+      <td>72.562136</td>
+      <td>50.980088</td>
+      <td>1.730300e-01</td>
+      <td>6.365259</td>
+      <td>1.260155</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>61.500000</td>
+      <td>3.859923e+01</td>
+      <td>73.980407</td>
+      <td>71.060260</td>
+      <td>1.730300e-01</td>
+      <td>11.861588</td>
+      <td>1.756508</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>77.500000</td>
+      <td>3.859923e+01</td>
+      <td>75.730351</td>
+      <td>120.269982</td>
+      <td>1.730300e-01</td>
+      <td>19.482349</td>
+      <td>2.972902</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>99.000000</td>
+      <td>3.859923e+01</td>
+      <td>81.478472</td>
+      <td>639.959855</td>
+      <td>1.730300e-01</td>
+      <td>110.732254</td>
+      <td>15.818893</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>The stsatistics are shown for each column and they are calculated over rows.
+<code class="docutils literal notranslate"><span class="pre">min</span></code> and <code class="docutils literal notranslate"><span class="pre">max</span></code> are obvious. <code class="docutils literal notranslate"><span class="pre">mean</span></code> is the average and <code class="docutils literal notranslate"><span class="pre">std</span></code> is the standard deviation. We will learn about those in a few lectures.
+The entries 25%, 50\5, and 75% are the so called “quantiles.” These are also statistical quantities about which are going to learn in a few lectures.
+<code class="docutils literal notranslate"><span class="pre">count</span></code> is simply the number of observations per column. Notice that it is 50 for most columns. But for some columns, e.g., <code class="docutils literal notranslate"><span class="pre">hvac</span></code>, some entries are missing.</p>
+</div>
+<div class="section" id="printing-specific-ranges">
+<h2>Printing specific ranges<a class="headerlink" href="#printing-specific-ranges" title="Permalink to this headline">¶</a></h2>
+<p>In this next section we look at different ways to quickly get some insight about the data and also how to look at specific columns, rows, etc.</p>
+<p>If we want to look at specific locations in the data we can do the following:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">head()</span></code> - the default displays the first 5 rows</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tail()</span></code> - the default displays the last 5 rows</p></li>
+</ul>
+<p>The way you can think about the syntax when using pandas is <code class="docutils literal notranslate"><span class="pre">Dataframe_name.action_to_be_done(params_if_needed)</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">temp_price</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>household</th>
+      <th>date</th>
+      <th>score</th>
+      <th>t_out</th>
+      <th>t_unit</th>
+      <th>hvac</th>
+      <th>price</th>
+      <th>Price per week</th>
+      <th>Price per day</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>a1</td>
+      <td>2019-01-06</td>
+      <td>85</td>
+      <td>38.599231</td>
+      <td>71.580704</td>
+      <td>35.113758</td>
+      <td>0.17303</td>
+      <td>6.075734</td>
+      <td>0.867962</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>a10</td>
+      <td>2019-01-06</td>
+      <td>70</td>
+      <td>38.599231</td>
+      <td>73.286260</td>
+      <td>63.949057</td>
+      <td>0.17303</td>
+      <td>11.065105</td>
+      <td>1.580729</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>a11</td>
+      <td>2019-01-06</td>
+      <td>61</td>
+      <td>38.599231</td>
+      <td>74.252046</td>
+      <td>147.612108</td>
+      <td>0.17303</td>
+      <td>25.541323</td>
+      <td>3.648760</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>a12</td>
+      <td>2019-01-06</td>
+      <td>65</td>
+      <td>38.599231</td>
+      <td>73.708482</td>
+      <td>74.394518</td>
+      <td>0.17303</td>
+      <td>12.872483</td>
+      <td>1.838926</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>a13</td>
+      <td>2019-01-06</td>
+      <td>66</td>
+      <td>38.599231</td>
+      <td>73.549554</td>
+      <td>173.095836</td>
+      <td>0.17303</td>
+      <td>29.950772</td>
+      <td>4.278682</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This will print the first 10 rows</span>
+<span class="n">temp_price</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>household</th>
+      <th>date</th>
+      <th>score</th>
+      <th>t_out</th>
+      <th>t_unit</th>
+      <th>hvac</th>
+      <th>price</th>
+      <th>Price per week</th>
+      <th>Price per day</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>a1</td>
+      <td>2019-01-06</td>
+      <td>85</td>
+      <td>38.599231</td>
+      <td>71.580704</td>
+      <td>35.113758</td>
+      <td>0.17303</td>
+      <td>6.075734</td>
+      <td>0.867962</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>a10</td>
+      <td>2019-01-06</td>
+      <td>70</td>
+      <td>38.599231</td>
+      <td>73.286260</td>
+      <td>63.949057</td>
+      <td>0.17303</td>
+      <td>11.065105</td>
+      <td>1.580729</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>a11</td>
+      <td>2019-01-06</td>
+      <td>61</td>
+      <td>38.599231</td>
+      <td>74.252046</td>
+      <td>147.612108</td>
+      <td>0.17303</td>
+      <td>25.541323</td>
+      <td>3.648760</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>a12</td>
+      <td>2019-01-06</td>
+      <td>65</td>
+      <td>38.599231</td>
+      <td>73.708482</td>
+      <td>74.394518</td>
+      <td>0.17303</td>
+      <td>12.872483</td>
+      <td>1.838926</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>a13</td>
+      <td>2019-01-06</td>
+      <td>66</td>
+      <td>38.599231</td>
+      <td>73.549554</td>
+      <td>173.095836</td>
+      <td>0.17303</td>
+      <td>29.950772</td>
+      <td>4.278682</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>a14</td>
+      <td>2019-01-06</td>
+      <td>84</td>
+      <td>38.599231</td>
+      <td>72.346457</td>
+      <td>7.040034</td>
+      <td>0.17303</td>
+      <td>1.218137</td>
+      <td>0.174020</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>a15</td>
+      <td>2019-01-06</td>
+      <td>1</td>
+      <td>38.599231</td>
+      <td>81.478472</td>
+      <td>639.959855</td>
+      <td>0.17303</td>
+      <td>110.732254</td>
+      <td>15.818893</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>a16</td>
+      <td>2019-01-06</td>
+      <td>25</td>
+      <td>38.599231</td>
+      <td>76.784504</td>
+      <td>616.805501</td>
+      <td>0.17303</td>
+      <td>106.725856</td>
+      <td>15.246551</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>a2</td>
+      <td>2019-01-06</td>
+      <td>74</td>
+      <td>38.599231</td>
+      <td>73.160367</td>
+      <td>322.648083</td>
+      <td>0.17303</td>
+      <td>55.827798</td>
+      <td>7.975400</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>a3</td>
+      <td>2019-01-06</td>
+      <td>55</td>
+      <td>38.599231</td>
+      <td>74.025149</td>
+      <td>95.139840</td>
+      <td>0.17303</td>
+      <td>16.462047</td>
+      <td>2.351721</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This prints the last 5 rows</span>
+<span class="n">temp_price</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>household</th>
+      <th>date</th>
+      <th>score</th>
+      <th>t_out</th>
+      <th>t_unit</th>
+      <th>hvac</th>
+      <th>price</th>
+      <th>Price per week</th>
+      <th>Price per day</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>45</th>
+      <td>c46</td>
+      <td>2019-01-06</td>
+      <td>76</td>
+      <td>38.599231</td>
+      <td>72.913740</td>
+      <td>124.591415</td>
+      <td>0.17303</td>
+      <td>21.558053</td>
+      <td>3.079722</td>
+    </tr>
+    <tr>
+      <th>46</th>
+      <td>c47</td>
+      <td>2019-01-06</td>
+      <td>74</td>
+      <td>38.599231</td>
+      <td>72.846354</td>
+      <td>84.631154</td>
+      <td>0.17303</td>
+      <td>14.643729</td>
+      <td>2.091961</td>
+    </tr>
+    <tr>
+      <th>47</th>
+      <td>c48</td>
+      <td>2019-01-06</td>
+      <td>53</td>
+      <td>38.599231</td>
+      <td>74.623562</td>
+      <td>279.324525</td>
+      <td>0.17303</td>
+      <td>48.331523</td>
+      <td>6.904503</td>
+    </tr>
+    <tr>
+      <th>48</th>
+      <td>c49</td>
+      <td>2019-01-06</td>
+      <td>71</td>
+      <td>38.599231</td>
+      <td>72.767163</td>
+      <td>51.483217</td>
+      <td>0.17303</td>
+      <td>8.908141</td>
+      <td>1.272592</td>
+    </tr>
+    <tr>
+      <th>49</th>
+      <td>c50</td>
+      <td>2019-01-06</td>
+      <td>52</td>
+      <td>38.599231</td>
+      <td>75.673562</td>
+      <td>87.482236</td>
+      <td>0.17303</td>
+      <td>15.137051</td>
+      <td>2.162436</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># If you wanted to print the first 7 rows (instead of the first 5) you would do this:</span>
+<span class="n">temp_price</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>household</th>
+      <th>date</th>
+      <th>score</th>
+      <th>t_out</th>
+      <th>t_unit</th>
+      <th>hvac</th>
+      <th>price</th>
+      <th>Price per week</th>
+      <th>Price per day</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>a1</td>
+      <td>2019-01-06</td>
+      <td>85</td>
+      <td>38.599231</td>
+      <td>71.580704</td>
+      <td>35.113758</td>
+      <td>0.17303</td>
+      <td>6.075734</td>
+      <td>0.867962</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>a10</td>
+      <td>2019-01-06</td>
+      <td>70</td>
+      <td>38.599231</td>
+      <td>73.286260</td>
+      <td>63.949057</td>
+      <td>0.17303</td>
+      <td>11.065105</td>
+      <td>1.580729</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>a11</td>
+      <td>2019-01-06</td>
+      <td>61</td>
+      <td>38.599231</td>
+      <td>74.252046</td>
+      <td>147.612108</td>
+      <td>0.17303</td>
+      <td>25.541323</td>
+      <td>3.648760</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>a12</td>
+      <td>2019-01-06</td>
+      <td>65</td>
+      <td>38.599231</td>
+      <td>73.708482</td>
+      <td>74.394518</td>
+      <td>0.17303</td>
+      <td>12.872483</td>
+      <td>1.838926</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>a13</td>
+      <td>2019-01-06</td>
+      <td>66</td>
+      <td>38.599231</td>
+      <td>73.549554</td>
+      <td>173.095836</td>
+      <td>0.17303</td>
+      <td>29.950772</td>
+      <td>4.278682</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>a14</td>
+      <td>2019-01-06</td>
+      <td>84</td>
+      <td>38.599231</td>
+      <td>72.346457</td>
+      <td>7.040034</td>
+      <td>0.17303</td>
+      <td>1.218137</td>
+      <td>0.174020</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>a15</td>
+      <td>2019-01-06</td>
+      <td>1</td>
+      <td>38.599231</td>
+      <td>81.478472</td>
+      <td>639.959855</td>
+      <td>0.17303</td>
+      <td>110.732254</td>
+      <td>15.818893</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Let&#39;s print the last 12 rows, what would you do?</span>
+<span class="n">temp_price</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>household</th>
+      <th>date</th>
+      <th>score</th>
+      <th>t_out</th>
+      <th>t_unit</th>
+      <th>hvac</th>
+      <th>price</th>
+      <th>Price per week</th>
+      <th>Price per day</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>45</th>
+      <td>c46</td>
+      <td>2019-01-06</td>
+      <td>76</td>
+      <td>38.599231</td>
+      <td>72.913740</td>
+      <td>124.591415</td>
+      <td>0.17303</td>
+      <td>21.558053</td>
+      <td>3.079722</td>
+    </tr>
+    <tr>
+      <th>46</th>
+      <td>c47</td>
+      <td>2019-01-06</td>
+      <td>74</td>
+      <td>38.599231</td>
+      <td>72.846354</td>
+      <td>84.631154</td>
+      <td>0.17303</td>
+      <td>14.643729</td>
+      <td>2.091961</td>
+    </tr>
+    <tr>
+      <th>47</th>
+      <td>c48</td>
+      <td>2019-01-06</td>
+      <td>53</td>
+      <td>38.599231</td>
+      <td>74.623562</td>
+      <td>279.324525</td>
+      <td>0.17303</td>
+      <td>48.331523</td>
+      <td>6.904503</td>
+    </tr>
+    <tr>
+      <th>48</th>
+      <td>c49</td>
+      <td>2019-01-06</td>
+      <td>71</td>
+      <td>38.599231</td>
+      <td>72.767163</td>
+      <td>51.483217</td>
+      <td>0.17303</td>
+      <td>8.908141</td>
+      <td>1.272592</td>
+    </tr>
+    <tr>
+      <th>49</th>
+      <td>c50</td>
+      <td>2019-01-06</td>
+      <td>52</td>
+      <td>38.599231</td>
+      <td>75.673562</td>
+      <td>87.482236</td>
+      <td>0.17303</td>
+      <td>15.137051</td>
+      <td>2.162436</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="cleaning-the-data">
+<h2>Cleaning the data<a class="headerlink" href="#cleaning-the-data" title="Permalink to this headline">¶</a></h2>
+<p>In the <code class="docutils literal notranslate"><span class="pre">temp_price</span></code> file you notice that some cells have -100 under the score column, -100.0 under the t_unit or NaN value for hvac. There are various reasons for this, but the details around it are not helpful for this point. We will focus on the <code class="docutils literal notranslate"><span class="pre">NaN</span></code>.</p>
+<p>When you see <code class="docutils literal notranslate"><span class="pre">NaN</span></code> this means that the value here is <strong>Not a Number</strong> and this is the pythonic notation to display that. For this example, when we see NaN that means that this unit is missing over 70% of its data for the week. This most likely means that the sensor for the unit needs to be replaced.</p>
+<p>Having these -100, -100.0 and NaN can mess with the interpretation of our anaylsis, so we want to clean the data to remove the corresponding observations.</p>
+<p>To do this we will use <code class="docutils literal notranslate"><span class="pre">dropna()</span></code> to remove the rows that have NaN. To get a better understanding of how <code class="docutils literal notranslate"><span class="pre">dropna()</span></code> works we can look at the documentation for it: <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.dropna.html">pandas dropna docs</a></p>
+<ul class="simple">
+<li><p>Look at the documentation to see what the axis needs to be in order to remove rows vs. columns</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">temp_no_null_rows</span> <span class="o">=</span> <span class="n">temp_price</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Print data with no NaN rows</span>
+<span class="n">temp_no_null_rows</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>household</th>
+      <th>date</th>
+      <th>score</th>
+      <th>t_out</th>
+      <th>t_unit</th>
+      <th>hvac</th>
+      <th>price</th>
+      <th>Price per week</th>
+      <th>Price per day</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>a1</td>
+      <td>2019-01-06</td>
+      <td>85</td>
+      <td>38.599231</td>
+      <td>71.580704</td>
+      <td>35.113758</td>
+      <td>0.17303</td>
+      <td>6.075734</td>
+      <td>0.867962</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>a10</td>
+      <td>2019-01-06</td>
+      <td>70</td>
+      <td>38.599231</td>
+      <td>73.286260</td>
+      <td>63.949057</td>
+      <td>0.17303</td>
+      <td>11.065105</td>
+      <td>1.580729</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>a11</td>
+      <td>2019-01-06</td>
+      <td>61</td>
+      <td>38.599231</td>
+      <td>74.252046</td>
+      <td>147.612108</td>
+      <td>0.17303</td>
+      <td>25.541323</td>
+      <td>3.648760</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>a12</td>
+      <td>2019-01-06</td>
+      <td>65</td>
+      <td>38.599231</td>
+      <td>73.708482</td>
+      <td>74.394518</td>
+      <td>0.17303</td>
+      <td>12.872483</td>
+      <td>1.838926</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>a13</td>
+      <td>2019-01-06</td>
+      <td>66</td>
+      <td>38.599231</td>
+      <td>73.549554</td>
+      <td>173.095836</td>
+      <td>0.17303</td>
+      <td>29.950772</td>
+      <td>4.278682</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>a14</td>
+      <td>2019-01-06</td>
+      <td>84</td>
+      <td>38.599231</td>
+      <td>72.346457</td>
+      <td>7.040034</td>
+      <td>0.17303</td>
+      <td>1.218137</td>
+      <td>0.174020</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>a15</td>
+      <td>2019-01-06</td>
+      <td>1</td>
+      <td>38.599231</td>
+      <td>81.478472</td>
+      <td>639.959855</td>
+      <td>0.17303</td>
+      <td>110.732254</td>
+      <td>15.818893</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>a16</td>
+      <td>2019-01-06</td>
+      <td>25</td>
+      <td>38.599231</td>
+      <td>76.784504</td>
+      <td>616.805501</td>
+      <td>0.17303</td>
+      <td>106.725856</td>
+      <td>15.246551</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>a2</td>
+      <td>2019-01-06</td>
+      <td>74</td>
+      <td>38.599231</td>
+      <td>73.160367</td>
+      <td>322.648083</td>
+      <td>0.17303</td>
+      <td>55.827798</td>
+      <td>7.975400</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>a3</td>
+      <td>2019-01-06</td>
+      <td>55</td>
+      <td>38.599231</td>
+      <td>74.025149</td>
+      <td>95.139840</td>
+      <td>0.17303</td>
+      <td>16.462047</td>
+      <td>2.351721</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>a4</td>
+      <td>2019-01-06</td>
+      <td>99</td>
+      <td>38.599231</td>
+      <td>71.391270</td>
+      <td>0.000000</td>
+      <td>0.17303</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>a5</td>
+      <td>2019-01-06</td>
+      <td>78</td>
+      <td>38.599231</td>
+      <td>76.724752</td>
+      <td>70.942532</td>
+      <td>0.17303</td>
+      <td>12.275186</td>
+      <td>1.753598</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>a6</td>
+      <td>2019-01-06</td>
+      <td>44</td>
+      <td>38.599231</td>
+      <td>74.787475</td>
+      <td>67.350034</td>
+      <td>0.17303</td>
+      <td>11.653576</td>
+      <td>1.664797</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>a7</td>
+      <td>2019-01-06</td>
+      <td>62</td>
+      <td>38.599231</td>
+      <td>76.071354</td>
+      <td>71.177988</td>
+      <td>0.17303</td>
+      <td>12.315927</td>
+      <td>1.759418</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>a8</td>
+      <td>2019-01-06</td>
+      <td>65</td>
+      <td>38.599231</td>
+      <td>73.935665</td>
+      <td>50.812378</td>
+      <td>0.17303</td>
+      <td>8.792066</td>
+      <td>1.256009</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>a9</td>
+      <td>2019-01-06</td>
+      <td>51</td>
+      <td>38.599231</td>
+      <td>75.807242</td>
+      <td>108.091675</td>
+      <td>0.17303</td>
+      <td>18.703103</td>
+      <td>2.671872</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>b17</td>
+      <td>2019-01-06</td>
+      <td>66</td>
+      <td>38.599231</td>
+      <td>72.950992</td>
+      <td>130.509717</td>
+      <td>0.17303</td>
+      <td>22.582096</td>
+      <td>3.226014</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>b18</td>
+      <td>2019-01-06</td>
+      <td>90</td>
+      <td>38.599231</td>
+      <td>70.947520</td>
+      <td>60.078379</td>
+      <td>0.17303</td>
+      <td>10.395362</td>
+      <td>1.485052</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>b19</td>
+      <td>2019-01-06</td>
+      <td>30</td>
+      <td>38.599231</td>
+      <td>74.636062</td>
+      <td>0.000000</td>
+      <td>0.17303</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>b20</td>
+      <td>2019-01-06</td>
+      <td>93</td>
+      <td>38.599231</td>
+      <td>75.286905</td>
+      <td>21.320244</td>
+      <td>0.17303</td>
+      <td>3.689042</td>
+      <td>0.527006</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>b21</td>
+      <td>2019-01-06</td>
+      <td>16</td>
+      <td>38.599231</td>
+      <td>75.749281</td>
+      <td>0.000000</td>
+      <td>0.17303</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>b22</td>
+      <td>2019-01-06</td>
+      <td>54</td>
+      <td>38.599231</td>
+      <td>78.609127</td>
+      <td>93.928528</td>
+      <td>0.17303</td>
+      <td>16.252453</td>
+      <td>2.321779</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>b23</td>
+      <td>2019-01-06</td>
+      <td>42</td>
+      <td>38.599231</td>
+      <td>78.693750</td>
+      <td>66.335020</td>
+      <td>0.17303</td>
+      <td>11.477949</td>
+      <td>1.639707</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>b24</td>
+      <td>2019-01-06</td>
+      <td>89</td>
+      <td>38.599231</td>
+      <td>73.677604</td>
+      <td>68.989156</td>
+      <td>0.17303</td>
+      <td>11.937194</td>
+      <td>1.705313</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>b25</td>
+      <td>2019-01-06</td>
+      <td>45</td>
+      <td>38.599231</td>
+      <td>77.909474</td>
+      <td>101.537204</td>
+      <td>0.17303</td>
+      <td>17.568982</td>
+      <td>2.509855</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>b26</td>
+      <td>2019-01-06</td>
+      <td>57</td>
+      <td>38.599231</td>
+      <td>75.206448</td>
+      <td>122.327846</td>
+      <td>0.17303</td>
+      <td>21.166387</td>
+      <td>3.023770</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>b28</td>
+      <td>2019-01-06</td>
+      <td>48</td>
+      <td>38.599231</td>
+      <td>71.536830</td>
+      <td>39.719913</td>
+      <td>0.17303</td>
+      <td>6.872737</td>
+      <td>0.981820</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>b29</td>
+      <td>2019-01-06</td>
+      <td>82</td>
+      <td>38.599231</td>
+      <td>72.493794</td>
+      <td>73.090187</td>
+      <td>0.17303</td>
+      <td>12.646795</td>
+      <td>1.806685</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>b30</td>
+      <td>2019-01-06</td>
+      <td>83</td>
+      <td>38.599231</td>
+      <td>77.639881</td>
+      <td>17.972378</td>
+      <td>0.17303</td>
+      <td>3.109761</td>
+      <td>0.444252</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>b31</td>
+      <td>2019-01-06</td>
+      <td>95</td>
+      <td>38.599231</td>
+      <td>70.905208</td>
+      <td>55.940869</td>
+      <td>0.17303</td>
+      <td>9.679448</td>
+      <td>1.382778</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>b33</td>
+      <td>2019-01-06</td>
+      <td>85</td>
+      <td>38.599231</td>
+      <td>72.888294</td>
+      <td>35.809398</td>
+      <td>0.17303</td>
+      <td>6.196100</td>
+      <td>0.885157</td>
+    </tr>
+    <tr>
+      <th>34</th>
+      <td>c35</td>
+      <td>2019-01-06</td>
+      <td>92</td>
+      <td>38.599231</td>
+      <td>70.424206</td>
+      <td>63.946396</td>
+      <td>0.17303</td>
+      <td>11.064645</td>
+      <td>1.580664</td>
+    </tr>
+    <tr>
+      <th>35</th>
+      <td>c36</td>
+      <td>2019-01-06</td>
+      <td>47</td>
+      <td>38.599231</td>
+      <td>76.082391</td>
+      <td>104.719999</td>
+      <td>0.17303</td>
+      <td>18.119701</td>
+      <td>2.588529</td>
+    </tr>
+    <tr>
+      <th>36</th>
+      <td>c37</td>
+      <td>2019-01-06</td>
+      <td>58</td>
+      <td>38.599231</td>
+      <td>74.256548</td>
+      <td>41.795780</td>
+      <td>0.17303</td>
+      <td>7.231924</td>
+      <td>1.033132</td>
+    </tr>
+    <tr>
+      <th>37</th>
+      <td>c38</td>
+      <td>2019-01-06</td>
+      <td>38</td>
+      <td>38.599231</td>
+      <td>74.836905</td>
+      <td>63.938661</td>
+      <td>0.17303</td>
+      <td>11.063306</td>
+      <td>1.580472</td>
+    </tr>
+    <tr>
+      <th>38</th>
+      <td>c39</td>
+      <td>2019-01-06</td>
+      <td>56</td>
+      <td>38.599231</td>
+      <td>73.872272</td>
+      <td>68.115254</td>
+      <td>0.17303</td>
+      <td>11.785982</td>
+      <td>1.683712</td>
+    </tr>
+    <tr>
+      <th>39</th>
+      <td>c40</td>
+      <td>2019-01-06</td>
+      <td>66</td>
+      <td>38.599231</td>
+      <td>75.579861</td>
+      <td>114.096389</td>
+      <td>0.17303</td>
+      <td>19.742098</td>
+      <td>2.820300</td>
+    </tr>
+    <tr>
+      <th>40</th>
+      <td>c41</td>
+      <td>2019-01-06</td>
+      <td>90</td>
+      <td>38.599231</td>
+      <td>69.140749</td>
+      <td>0.000000</td>
+      <td>0.17303</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>42</th>
+      <td>c43</td>
+      <td>2019-01-06</td>
+      <td>38</td>
+      <td>38.599231</td>
+      <td>78.054390</td>
+      <td>136.530552</td>
+      <td>0.17303</td>
+      <td>23.623881</td>
+      <td>3.374840</td>
+    </tr>
+    <tr>
+      <th>43</th>
+      <td>c44</td>
+      <td>2019-01-06</td>
+      <td>28</td>
+      <td>38.599231</td>
+      <td>78.211012</td>
+      <td>170.058540</td>
+      <td>0.17303</td>
+      <td>29.425229</td>
+      <td>4.203604</td>
+    </tr>
+    <tr>
+      <th>44</th>
+      <td>c45</td>
+      <td>2019-01-06</td>
+      <td>66</td>
+      <td>38.599231</td>
+      <td>74.781052</td>
+      <td>197.492980</td>
+      <td>0.17303</td>
+      <td>34.172210</td>
+      <td>4.881744</td>
+    </tr>
+    <tr>
+      <th>45</th>
+      <td>c46</td>
+      <td>2019-01-06</td>
+      <td>76</td>
+      <td>38.599231</td>
+      <td>72.913740</td>
+      <td>124.591415</td>
+      <td>0.17303</td>
+      <td>21.558053</td>
+      <td>3.079722</td>
+    </tr>
+    <tr>
+      <th>46</th>
+      <td>c47</td>
+      <td>2019-01-06</td>
+      <td>74</td>
+      <td>38.599231</td>
+      <td>72.846354</td>
+      <td>84.631154</td>
+      <td>0.17303</td>
+      <td>14.643729</td>
+      <td>2.091961</td>
+    </tr>
+    <tr>
+      <th>47</th>
+      <td>c48</td>
+      <td>2019-01-06</td>
+      <td>53</td>
+      <td>38.599231</td>
+      <td>74.623562</td>
+      <td>279.324525</td>
+      <td>0.17303</td>
+      <td>48.331523</td>
+      <td>6.904503</td>
+    </tr>
+    <tr>
+      <th>48</th>
+      <td>c49</td>
+      <td>2019-01-06</td>
+      <td>71</td>
+      <td>38.599231</td>
+      <td>72.767163</td>
+      <td>51.483217</td>
+      <td>0.17303</td>
+      <td>8.908141</td>
+      <td>1.272592</td>
+    </tr>
+    <tr>
+      <th>49</th>
+      <td>c50</td>
+      <td>2019-01-06</td>
+      <td>52</td>
+      <td>38.599231</td>
+      <td>75.673562</td>
+      <td>87.482236</td>
+      <td>0.17303</td>
+      <td>15.137051</td>
+      <td>2.162436</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p><strong>What do you notice?</strong></p>
+<ul class="simple">
+<li><p>Do you see any NaN or -100 values in the dataset?</p></li>
+<li><p>Do we still have the same number of indicies?</p></li>
+</ul>
+<p>We can use the <code class="docutils literal notranslate"><span class="pre">DataFrame.shape</span></code> to compare the previous table with the removal of the <code class="docutils literal notranslate"><span class="pre">NaN</span></code> to double check.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># shape of data after cleaning</span>
+<span class="n">temp_no_null_rows</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(46, 9)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># shape of data before cleaning</span>
+<span class="n">temp_price</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(50, 9)
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">shape()</span></code> tells the number of rows and columns of the dataset.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When dealing with columns, you typically want to keep everything lowercase and remove spaces. This makes it easier to type the column names later on. So, to rename an existing column in the dataframe we can do the following: <code class="docutils literal notranslate"><span class="pre">df.rename(columns={'current_name'</span> <span class="pre">:</span> <span class="pre">'new_name'},</span> <span class="pre">inplace=True)</span></code></p>
+</div>
+<p>Let’s rename <code class="docutils literal notranslate"><span class="pre">Price</span> <span class="pre">per</span> <span class="pre">week</span></code> to <code class="docutils literal notranslate"><span class="pre">week_price</span></code> and <code class="docutils literal notranslate"><span class="pre">Price</span> <span class="pre">per</span> <span class="pre">day</span></code> to <code class="docutils literal notranslate"><span class="pre">daily_price</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Changing the title of columns</span>
+<span class="n">clean_data</span> <span class="o">=</span> <span class="n">temp_no_null_rows</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Price per week&#39;</span><span class="p">:</span> <span class="s1">&#39;week_price&#39;</span><span class="p">,</span>
+                                               <span class="s1">&#39;Price per day&#39;</span><span class="p">:</span> <span class="s1">&#39;daily_price&#39;</span><span class="p">})</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># See the the column names have changed</span>
+<span class="n">clean_data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>household</th>
+      <th>date</th>
+      <th>score</th>
+      <th>t_out</th>
+      <th>t_unit</th>
+      <th>hvac</th>
+      <th>price</th>
+      <th>week_price</th>
+      <th>daily_price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>a1</td>
+      <td>2019-01-06</td>
+      <td>85</td>
+      <td>38.599231</td>
+      <td>71.580704</td>
+      <td>35.113758</td>
+      <td>0.17303</td>
+      <td>6.075734</td>
+      <td>0.867962</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>a10</td>
+      <td>2019-01-06</td>
+      <td>70</td>
+      <td>38.599231</td>
+      <td>73.286260</td>
+      <td>63.949057</td>
+      <td>0.17303</td>
+      <td>11.065105</td>
+      <td>1.580729</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>a11</td>
+      <td>2019-01-06</td>
+      <td>61</td>
+      <td>38.599231</td>
+      <td>74.252046</td>
+      <td>147.612108</td>
+      <td>0.17303</td>
+      <td>25.541323</td>
+      <td>3.648760</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>a12</td>
+      <td>2019-01-06</td>
+      <td>65</td>
+      <td>38.599231</td>
+      <td>73.708482</td>
+      <td>74.394518</td>
+      <td>0.17303</td>
+      <td>12.872483</td>
+      <td>1.838926</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>a13</td>
+      <td>2019-01-06</td>
+      <td>66</td>
+      <td>38.599231</td>
+      <td>73.549554</td>
+      <td>173.095836</td>
+      <td>0.17303</td>
+      <td>29.950772</td>
+      <td>4.278682</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Now, you may be wandering what exactly is:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Price per week&#39;</span><span class="p">:</span> <span class="s1">&#39;week_price&#39;</span><span class="p">,</span>
+         <span class="s1">&#39;Price per day&#39;</span><span class="p">:</span> <span class="s1">&#39;daily_price&#39;</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>This defines a <em>dictionary</em>.
+It is a special Python type called <code class="docutils literal notranslate"><span class="pre">dict</span></code>.
+See <a class="reference external" href="https://docs.python.org/3/tutorial/datastructures.html">Sec. 5.5 here</a>.
+But let’s also run it separately:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Price per week&#39;</span><span class="p">:</span> <span class="s1">&#39;week_price&#39;</span><span class="p">,</span>
+         <span class="s1">&#39;Price per day&#39;</span><span class="p">:</span> <span class="s1">&#39;daily_price&#39;</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">columns</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;Price per week&#39;: &#39;week_price&#39;, &#39;Price per day&#39;: &#39;daily_price&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">columns</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">columns</span><span class="p">[</span><span class="s1">&#39;Price per week&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;week_price&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">columns</span><span class="p">[</span><span class="s1">&#39;Price per day&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;daily_price&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">columns</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_keys([&#39;Price per week&#39;, &#39;Price per day&#39;])
+</pre></div>
+</div>
+</div>
+</div>
+<p>So, <code class="docutils literal notranslate"><span class="pre">rename</span></code> looks at the dictionary for keys that are column names and then replacs the corresponding column name with whatever the dictionary indicates.</p>
+<p>Now that we have clean data, we can explore the data set with the following actions:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">df['column_name']</span></code> - to select a single column from the dataframe</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">df[['column_name1',</span> <span class="pre">'column_name7']]</span></code> - to select a lists of columns from dataframe</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">df.loc[rowindex1]</span></code> - to select a single row from the dataframe</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">df.loc[[rowindex1,</span> <span class="pre">rowindex2]]</span></code> - to select a list of rows from the dataframe</p></li>
+</ul>
+<p>Let’s give some examples.</p>
+<p>Get the <code class="docutils literal notranslate"><span class="pre">household</span></code> column:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">clean_data</span><span class="p">[</span><span class="s1">&#39;household&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0      a1
+1     a10
+2     a11
+3     a12
+4     a13
+5     a14
+6     a15
+7     a16
+8      a2
+9      a3
+10     a4
+11     a5
+12     a6
+13     a7
+14     a8
+15     a9
+16    b17
+17    b18
+18    b19
+19    b20
+20    b21
+21    b22
+22    b23
+23    b24
+24    b25
+25    b26
+27    b28
+28    b29
+29    b30
+30    b31
+32    b33
+34    c35
+35    c36
+36    c37
+37    c38
+38    c39
+39    c40
+40    c41
+42    c43
+43    c44
+44    c45
+45    c46
+46    c47
+47    c48
+48    c49
+49    c50
+Name: household, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<p>Select multiple columns:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">clean_data</span><span class="p">[[</span><span class="s1">&#39;household&#39;</span><span class="p">,</span> <span class="s1">&#39;daily_price&#39;</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>household</th>
+      <th>daily_price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>a1</td>
+      <td>0.867962</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>a10</td>
+      <td>1.580729</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>a11</td>
+      <td>3.648760</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>a12</td>
+      <td>1.838926</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>a13</td>
+      <td>4.278682</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>a14</td>
+      <td>0.174020</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>a15</td>
+      <td>15.818893</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>a16</td>
+      <td>15.246551</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>a2</td>
+      <td>7.975400</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>a3</td>
+      <td>2.351721</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>a4</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>a5</td>
+      <td>1.753598</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>a6</td>
+      <td>1.664797</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>a7</td>
+      <td>1.759418</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>a8</td>
+      <td>1.256009</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>a9</td>
+      <td>2.671872</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>b17</td>
+      <td>3.226014</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>b18</td>
+      <td>1.485052</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>b19</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>b20</td>
+      <td>0.527006</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>b21</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>b22</td>
+      <td>2.321779</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>b23</td>
+      <td>1.639707</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>b24</td>
+      <td>1.705313</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>b25</td>
+      <td>2.509855</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>b26</td>
+      <td>3.023770</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>b28</td>
+      <td>0.981820</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>b29</td>
+      <td>1.806685</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>b30</td>
+      <td>0.444252</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>b31</td>
+      <td>1.382778</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>b33</td>
+      <td>0.885157</td>
+    </tr>
+    <tr>
+      <th>34</th>
+      <td>c35</td>
+      <td>1.580664</td>
+    </tr>
+    <tr>
+      <th>35</th>
+      <td>c36</td>
+      <td>2.588529</td>
+    </tr>
+    <tr>
+      <th>36</th>
+      <td>c37</td>
+      <td>1.033132</td>
+    </tr>
+    <tr>
+      <th>37</th>
+      <td>c38</td>
+      <td>1.580472</td>
+    </tr>
+    <tr>
+      <th>38</th>
+      <td>c39</td>
+      <td>1.683712</td>
+    </tr>
+    <tr>
+      <th>39</th>
+      <td>c40</td>
+      <td>2.820300</td>
+    </tr>
+    <tr>
+      <th>40</th>
+      <td>c41</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>42</th>
+      <td>c43</td>
+      <td>3.374840</td>
+    </tr>
+    <tr>
+      <th>43</th>
+      <td>c44</td>
+      <td>4.203604</td>
+    </tr>
+    <tr>
+      <th>44</th>
+      <td>c45</td>
+      <td>4.881744</td>
+    </tr>
+    <tr>
+      <th>45</th>
+      <td>c46</td>
+      <td>3.079722</td>
+    </tr>
+    <tr>
+      <th>46</th>
+      <td>c47</td>
+      <td>2.091961</td>
+    </tr>
+    <tr>
+      <th>47</th>
+      <td>c48</td>
+      <td>6.904503</td>
+    </tr>
+    <tr>
+      <th>48</th>
+      <td>c49</td>
+      <td>1.272592</td>
+    </tr>
+    <tr>
+      <th>49</th>
+      <td>c50</td>
+      <td>2.162436</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>In the above example you are giving a list of column names as an index. This is why you have to square brackets. The first is for the data frame index. The second is for the list of columns.
+Maybe, this will help understand what is going on:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">column_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;household&#39;</span><span class="p">,</span> <span class="s1">&#39;daily_price&#39;</span><span class="p">]</span>
+<span class="n">clean_data</span><span class="p">[</span><span class="n">column_list</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>household</th>
+      <th>daily_price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>a1</td>
+      <td>0.867962</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>a10</td>
+      <td>1.580729</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>a11</td>
+      <td>3.648760</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>a12</td>
+      <td>1.838926</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>a13</td>
+      <td>4.278682</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>a14</td>
+      <td>0.174020</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>a15</td>
+      <td>15.818893</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>a16</td>
+      <td>15.246551</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>a2</td>
+      <td>7.975400</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>a3</td>
+      <td>2.351721</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>a4</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>a5</td>
+      <td>1.753598</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>a6</td>
+      <td>1.664797</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>a7</td>
+      <td>1.759418</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>a8</td>
+      <td>1.256009</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>a9</td>
+      <td>2.671872</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>b17</td>
+      <td>3.226014</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>b18</td>
+      <td>1.485052</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>b19</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>b20</td>
+      <td>0.527006</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>b21</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>b22</td>
+      <td>2.321779</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>b23</td>
+      <td>1.639707</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>b24</td>
+      <td>1.705313</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>b25</td>
+      <td>2.509855</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>b26</td>
+      <td>3.023770</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>b28</td>
+      <td>0.981820</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>b29</td>
+      <td>1.806685</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>b30</td>
+      <td>0.444252</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>b31</td>
+      <td>1.382778</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>b33</td>
+      <td>0.885157</td>
+    </tr>
+    <tr>
+      <th>34</th>
+      <td>c35</td>
+      <td>1.580664</td>
+    </tr>
+    <tr>
+      <th>35</th>
+      <td>c36</td>
+      <td>2.588529</td>
+    </tr>
+    <tr>
+      <th>36</th>
+      <td>c37</td>
+      <td>1.033132</td>
+    </tr>
+    <tr>
+      <th>37</th>
+      <td>c38</td>
+      <td>1.580472</td>
+    </tr>
+    <tr>
+      <th>38</th>
+      <td>c39</td>
+      <td>1.683712</td>
+    </tr>
+    <tr>
+      <th>39</th>
+      <td>c40</td>
+      <td>2.820300</td>
+    </tr>
+    <tr>
+      <th>40</th>
+      <td>c41</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>42</th>
+      <td>c43</td>
+      <td>3.374840</td>
+    </tr>
+    <tr>
+      <th>43</th>
+      <td>c44</td>
+      <td>4.203604</td>
+    </tr>
+    <tr>
+      <th>44</th>
+      <td>c45</td>
+      <td>4.881744</td>
+    </tr>
+    <tr>
+      <th>45</th>
+      <td>c46</td>
+      <td>3.079722</td>
+    </tr>
+    <tr>
+      <th>46</th>
+      <td>c47</td>
+      <td>2.091961</td>
+    </tr>
+    <tr>
+      <th>47</th>
+      <td>c48</td>
+      <td>6.904503</td>
+    </tr>
+    <tr>
+      <th>48</th>
+      <td>c49</td>
+      <td>1.272592</td>
+    </tr>
+    <tr>
+      <th>49</th>
+      <td>c50</td>
+      <td>2.162436</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Select a row:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">clean_data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">30</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>household             b31
+date           2019-01-06
+score                  95
+t_out           38.599231
+t_unit          70.905208
+hvac            55.940869
+price             0.17303
+week_price       9.679448
+daily_price      1.382778
+Name: 30, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<p>Select certain rows:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">clean_data</span><span class="o">.</span><span class="n">loc</span><span class="p">[[</span><span class="mi">25</span><span class="p">,</span><span class="mi">39</span><span class="p">,</span> <span class="mi">45</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>household</th>
+      <th>date</th>
+      <th>score</th>
+      <th>t_out</th>
+      <th>t_unit</th>
+      <th>hvac</th>
+      <th>price</th>
+      <th>week_price</th>
+      <th>daily_price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>25</th>
+      <td>b26</td>
+      <td>2019-01-06</td>
+      <td>57</td>
+      <td>38.599231</td>
+      <td>75.206448</td>
+      <td>122.327846</td>
+      <td>0.17303</td>
+      <td>21.166387</td>
+      <td>3.023770</td>
+    </tr>
+    <tr>
+      <th>39</th>
+      <td>c40</td>
+      <td>2019-01-06</td>
+      <td>66</td>
+      <td>38.599231</td>
+      <td>75.579861</td>
+      <td>114.096389</td>
+      <td>0.17303</td>
+      <td>19.742098</td>
+      <td>2.820300</td>
+    </tr>
+    <tr>
+      <th>45</th>
+      <td>c46</td>
+      <td>2019-01-06</td>
+      <td>76</td>
+      <td>38.599231</td>
+      <td>72.913740</td>
+      <td>124.591415</td>
+      <td>0.17303</td>
+      <td>21.558053</td>
+      <td>3.079722</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Select a slice of rows:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">clean_data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">25</span><span class="p">:</span><span class="mi">36</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>household</th>
+      <th>date</th>
+      <th>score</th>
+      <th>t_out</th>
+      <th>t_unit</th>
+      <th>hvac</th>
+      <th>price</th>
+      <th>week_price</th>
+      <th>daily_price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>25</th>
+      <td>b26</td>
+      <td>2019-01-06</td>
+      <td>57</td>
+      <td>38.599231</td>
+      <td>75.206448</td>
+      <td>122.327846</td>
+      <td>0.17303</td>
+      <td>21.166387</td>
+      <td>3.023770</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>b28</td>
+      <td>2019-01-06</td>
+      <td>48</td>
+      <td>38.599231</td>
+      <td>71.536830</td>
+      <td>39.719913</td>
+      <td>0.17303</td>
+      <td>6.872737</td>
+      <td>0.981820</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>b29</td>
+      <td>2019-01-06</td>
+      <td>82</td>
+      <td>38.599231</td>
+      <td>72.493794</td>
+      <td>73.090187</td>
+      <td>0.17303</td>
+      <td>12.646795</td>
+      <td>1.806685</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>b30</td>
+      <td>2019-01-06</td>
+      <td>83</td>
+      <td>38.599231</td>
+      <td>77.639881</td>
+      <td>17.972378</td>
+      <td>0.17303</td>
+      <td>3.109761</td>
+      <td>0.444252</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>b31</td>
+      <td>2019-01-06</td>
+      <td>95</td>
+      <td>38.599231</td>
+      <td>70.905208</td>
+      <td>55.940869</td>
+      <td>0.17303</td>
+      <td>9.679448</td>
+      <td>1.382778</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>b33</td>
+      <td>2019-01-06</td>
+      <td>85</td>
+      <td>38.599231</td>
+      <td>72.888294</td>
+      <td>35.809398</td>
+      <td>0.17303</td>
+      <td>6.196100</td>
+      <td>0.885157</td>
+    </tr>
+    <tr>
+      <th>34</th>
+      <td>c35</td>
+      <td>2019-01-06</td>
+      <td>92</td>
+      <td>38.599231</td>
+      <td>70.424206</td>
+      <td>63.946396</td>
+      <td>0.17303</td>
+      <td>11.064645</td>
+      <td>1.580664</td>
+    </tr>
+    <tr>
+      <th>35</th>
+      <td>c36</td>
+      <td>2019-01-06</td>
+      <td>47</td>
+      <td>38.599231</td>
+      <td>76.082391</td>
+      <td>104.719999</td>
+      <td>0.17303</td>
+      <td>18.119701</td>
+      <td>2.588529</td>
+    </tr>
+    <tr>
+      <th>36</th>
+      <td>c37</td>
+      <td>2019-01-06</td>
+      <td>58</td>
+      <td>38.599231</td>
+      <td>74.256548</td>
+      <td>41.795780</td>
+      <td>0.17303</td>
+      <td>7.231924</td>
+      <td>1.033132</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>And there many more things that you can easily do with pandas.
+There are so many things to do with pandas that you can spend weeks on this library alone.
+Our suggestion is to learn pandas as needed when you experiment with data files.
+Typically, if you think about what you need to do, you can find how to do it in pandas with a good Google search.</p>
+</div>
+<div class="section" id="questions">
+<h2>Questions<a class="headerlink" href="#questions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Write pandas code that extracts the <code class="docutils literal notranslate"><span class="pre">week_price</span></code> column from <code class="docutils literal notranslate"><span class="pre">clean_data</span></code>.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Write pandas code that gives you tghe <code class="docutils literal notranslate"><span class="pre">hvac</span></code> and the <code class="docutils literal notranslate"><span class="pre">price</span></code> columns.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./lecture03"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="python-csv-files.html" title="previous page">Comma-separated values file format</a>
+    <a class='right-next' id="next-link" href="homework_03.html" title="next page">Homework 3</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Ilias Bilionis<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
