@@ -6,7 +6,7 @@ Let's go over the most important once with some proofs.
 In what follows $X$ is either a discrete or a continuous random variable
 and $\mu = \mathbb{E}[X]$ is its expected value.
 
-(lecture11:variance-property-1)
+(lecture11:variance-property-1)=
 ## Variance Property 1: The variance of a random variable times a scalar is the square of the scalar times the variance of the random variable
 
 Let $\lambda$ be any scalar value.
@@ -34,7 +34,7 @@ $$
 \end{split}
 $$
 
-(lecture11:variance-property-2)
+(lecture11:variance-property-2)=
 ## Variance Property 2: The variance of a random variable plus a constant is the variance of the random variable
 
 Let $\lambda$ be any number. Then:
@@ -60,7 +60,7 @@ $$
 \end{split}
 $$
 
-(lecture11:variance-property-3)
+(lecture11:variance-property-3)=
 ## Variance Property 3: The variance is the expectation of the square minus the expectation of a random variable
 
 Mathematically, we have:
