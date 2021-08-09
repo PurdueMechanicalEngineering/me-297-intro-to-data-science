@@ -1,3 +1,14 @@
+_build
+
+lecture*/*.csv
+lecture*/*.xlsx
+lecture*/*.dat
+lecture*/*.txt
+lecture04/*.jpg
+lecture04/*.pdf
+lecture04/*.png
+lecture04/*.svg
+
 .DS_Store
 # Byte-compiled / optimized / DLL files
 __pycache__/
