@@ -18,7 +18,7 @@ $$
 The proof is super easy. It follows directly from the properties of integrals
 and summations.
 
-(lecture11:expectation-property-3)=
+(lecture11:expectation-property-2)=
 ## Expectation Property 2: The expectation of a function of a random variable
 
 Let $f(x)$ be any function defined over the support of the random variable $X$.
