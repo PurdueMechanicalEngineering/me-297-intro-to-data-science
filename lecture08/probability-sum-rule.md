@@ -1,4 +1,4 @@
-(lecture08:sum-rule=)
+(lecture08:sum-rule)=
 # The sum rule
 
 This is the final rule we are going to consider in this lecture.
