@@ -6,7 +6,9 @@ author: "Ilias Bilionis (ibilion[at]purdue.edu)"
 repository:
   url: "https://github.com/PurdueMechanicalEngineering/me-297-intro-to-data-science"
 launch_buttons:
+  notebook_interface: "jupyterlab"
   colab_url: "https://colab.research.google.com"
+  binderhub_url: "https://mybinder.org"
 bibtex_bibfiles:
   - references.bib
 sphinx:
