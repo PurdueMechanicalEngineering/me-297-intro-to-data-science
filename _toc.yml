@@ -81,7 +81,7 @@ chapters:
   - file: lecture11/intro
     sections:
     - file: lecture11/expectation-discrete-rv
-    - file: lecture11/examples-expectation-discrete-rvs
+    - file: lecture11/examples-expectation-of-discrete-rvs
     - file: lecture11/expectation-continuous-rv
     - file: lecture11/expectation-notation
     - file: lecture11/properties-of-expectations
