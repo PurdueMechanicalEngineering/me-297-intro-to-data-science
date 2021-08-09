@@ -2,7 +2,9 @@
 title: "Introduction to Data Science for Mechanical Engineers (Lecture Book)"
 execute:
   execute_notebooks: "off"
-author: "Ilias Bilionis"
+author: "Ilias Bilionis (ibilion[at]purdue.edu)"
+repository:
+  url: "https://github.com/PurdueMechanicalEngineering/me-297-intro-to-data-science"
 launch_buttons:
   colab_url: "https://colab.research.google.com"
 bibtex_bibfiles:
