@@ -133,7 +133,7 @@ $$
 p(a < X \le b) = \int_a^b p(x) dx.
 $$
 
-See {numref}`pdf` for a visualization. The probability is the area between the
+See {numref}`pdf-shape` for a visualization. The probability is the area between the
 PDF, the x-axis, and the endpoints of the interval $[a, b]$.
 
 This is obviously extremely useful because if you have the PDF it allows you
