@@ -120,6 +120,7 @@ chapters:
     - file: lecture15/example-linear-regression
     - file: lecture15/polynomial-regression
     - file: lecture15/the-generalized-linear-model
+    - file: lecture15/regression-diagnostics
     - file: lecture15/cross-validation
     - file: lecture15/maximum-likelihood-interpretation
     - file: lecture15/maximum-likelihood-example
