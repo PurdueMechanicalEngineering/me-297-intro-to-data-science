@@ -1,4 +1,4 @@
-(lecture13:joint-probability-density-function)
+(lecture13:joint-probability-density-function)=
 # The joint probability density function
 
 Consider two continuous random variables $X$ and $Y$.
