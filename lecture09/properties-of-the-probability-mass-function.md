@@ -43,3 +43,4 @@ of $X$ taking values in $A$ is:
 $$
 p(X\in A) = \sum_{x\in A} p(x).
 $$
+
