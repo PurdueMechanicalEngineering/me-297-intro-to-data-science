@@ -5,56 +5,52 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Properties of the probability mass function &#8212; Introduction to Data Science for Mechanical Engineers (Lecture Book)</title>
+    <title>me-297-intro-to-data-science &#8212; Introduction to Data Science for Mechanical Engineers (Lecture Book)</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet" />
-  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
 
     
   <link rel="stylesheet"
-    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
   <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
   <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     
       
 
     
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
 
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
     </script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="The Categorical distribution" href="the-categorical-distribution.html" />
-    <link rel="prev" title="The Bernoulli distribution" href="the-bernoulli-distribution.html" />
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -71,27 +67,27 @@
 <div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../index.html">
+    <a class="navbar-brand text-wrap" href="index.html">
       
       
       <h1 class="site-logo" id="site-title">Introduction to Data Science for Mechanical Engineers (Lecture Book)</h1>
       
     </a>
-</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../index.html">
+  <a class="reference internal" href="index.html">
    Preface
   </a>
  </li>
 </ul>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../lecture01/intro.html">
+  <a class="reference internal" href="lecture01/intro.html">
    Lecture 1: Introduction
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
@@ -101,39 +97,39 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../lecture01/what-is-data-science.html">
+    <a class="reference internal" href="lecture01/what-is-data-science.html">
      What is data science?
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../lecture01/cool-applications.html">
+    <a class="reference internal" href="lecture01/cool-applications.html">
      Some cool appliations of data science in mechanical engineering
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../lecture01/python-intro.html">
+    <a class="reference internal" href="lecture01/python-intro.html">
      Why Python?
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../lecture01/python-expressions.html">
+    <a class="reference internal" href="lecture01/python-expressions.html">
      Python expressions
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../lecture01/python-variables-and-types.html">
+    <a class="reference internal" href="lecture01/python-variables-and-types.html">
      Python variables and types
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../lecture01/homework_01.html">
+    <a class="reference internal" href="lecture01/homework_01.html">
      Homework 1
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../lecture02/intro.html">
+  <a class="reference internal" href="lecture02/intro.html">
    Lecture 2: Data arrays
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
@@ -143,29 +139,29 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../lecture02/python-tuples.html">
+    <a class="reference internal" href="lecture02/python-tuples.html">
      Python tuples
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../lecture02/python-lists.html">
+    <a class="reference internal" href="lecture02/python-lists.html">
      Python lists
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../lecture02/python-numpy.html">
+    <a class="reference internal" href="lecture02/python-numpy.html">
      Numerical Python
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../lecture02/homework_02.html">
+    <a class="reference internal" href="lecture02/homework_02.html">
      Homework 2
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../lecture03/intro.html">
+  <a class="reference internal" href="lecture03/intro.html">
    Lecture 3: Data loading and selection
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
@@ -175,29 +171,29 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../lecture03/python-matrices.html">
+    <a class="reference internal" href="lecture03/python-matrices.html">
      Matrices
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../lecture03/python-csv-files.html">
+    <a class="reference internal" href="lecture03/python-csv-files.html">
      Comma-separated values file format
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../lecture03/python-pandas.html">
+    <a class="reference internal" href="lecture03/python-pandas.html">
      The Python data analysis library
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../lecture03/homework_03.html">
+    <a class="reference internal" href="lecture03/homework_03.html">
      Homework 3
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../lecture04/intro.html">
+  <a class="reference internal" href="lecture04/intro.html">
    Lecture 4: Data visualization
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
@@ -207,34 +203,34 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../lecture04/python-plotting.html">
+    <a class="reference internal" href="lecture04/python-plotting.html">
      Plotting simple functions
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../lecture04/python-plot-noisy.html">
+    <a class="reference internal" href="lecture04/python-plot-noisy.html">
      Plotting noisy measurements
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../lecture04/python-scatter.html">
+    <a class="reference internal" href="lecture04/python-scatter.html">
      Scatter plots
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../lecture04/python-histograms.html">
+    <a class="reference internal" href="lecture04/python-histograms.html">
      Histograms
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../lecture04/homework_04.html">
+    <a class="reference internal" href="lecture04/homework_04.html">
      Homework 4
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../lecture05/intro.html">
+  <a class="reference internal" href="lecture05/intro.html">
    Lecture 5: Functions, data manipulation, and models
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
@@ -244,39 +240,39 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../lecture05/python-strings.html">
+    <a class="reference internal" href="lecture05/python-strings.html">
      Basics of strings
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../lecture05/python-print.html">
+    <a class="reference internal" href="lecture05/python-print.html">
      The print function
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../lecture05/python-functions.html">
+    <a class="reference internal" href="lecture05/python-functions.html">
      Python functions
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../lecture05/applying-functions-to-dataframes.html">
+    <a class="reference internal" href="lecture05/applying-functions-to-dataframes.html">
      Applying functions to dataframes
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../lecture05/models-are-functions.html">
+    <a class="reference internal" href="lecture05/models-are-functions.html">
      Models are functions
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../lecture05/homework_05.html">
+    <a class="reference internal" href="lecture05/homework_05.html">
      Homework 5
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../lecture06/intro.html">
+  <a class="reference internal" href="lecture06/intro.html">
    Lecture 6: Conditionals and loops
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
@@ -286,29 +282,29 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../lecture06/python-conditionals.html">
+    <a class="reference internal" href="lecture06/python-conditionals.html">
      Python conditionals
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../lecture06/python-loops.html">
+    <a class="reference internal" href="lecture06/python-loops.html">
      Python loops
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../lecture06/python-pandas-selections.html">
+    <a class="reference internal" href="lecture06/python-pandas-selections.html">
      Selecting dataframe rows that satisfy a boolean expression
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../lecture06/homework_06.html">
+    <a class="reference internal" href="lecture06/homework_06.html">
      Homework 6
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../lecture07/intro.html">
+  <a class="reference internal" href="lecture07/intro.html">
    Lecture 7: Probability as a measure of uncertainty
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
@@ -318,39 +314,39 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../lecture07/probability-and-state-of-knowledge.html">
+    <a class="reference internal" href="lecture07/probability-and-state-of-knowledge.html">
      Probability as a representation of our state of knowledge
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../lecture07/probability-common-sense.html">
+    <a class="reference internal" href="lecture07/probability-common-sense.html">
      The common sense assumptions that give rise to the basic probability rules.
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../lecture07/principle-of-insufficient-reason.html">
+    <a class="reference internal" href="lecture07/principle-of-insufficient-reason.html">
      The principle of insufficient reason
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../lecture07/estimating-probabilities-by-simulation.html">
+    <a class="reference internal" href="lecture07/estimating-probabilities-by-simulation.html">
      Estimating probabilities by simulation
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../lecture07/estimating-probabilities-from-data.html">
+    <a class="reference internal" href="lecture07/estimating-probabilities-from-data.html">
      Estimating probabilities from data - Bootstrapping
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../lecture07/homework_07.html">
+    <a class="reference internal" href="lecture07/homework_07.html">
      Homework 7
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../lecture08/intro.html">
+  <a class="reference internal" href="lecture08/intro.html">
    Lecture 8: The basic rules of probability
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
@@ -360,96 +356,96 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../lecture08/probability-rules.html">
+    <a class="reference internal" href="lecture08/probability-rules.html">
      The basic rules of probability
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../lecture08/probability-urn-example.html">
+    <a class="reference internal" href="lecture08/probability-urn-example.html">
      Example - Drawing balls from a box without replacement
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../lecture08/probability-of-disjunction.html">
+    <a class="reference internal" href="lecture08/probability-of-disjunction.html">
      Probability of logical disjunctions
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../lecture08/probability-sum-rule.html">
+    <a class="reference internal" href="lecture08/probability-sum-rule.html">
      The sum rule
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../lecture08/probability-urn-example-sum-rule.html">
+    <a class="reference internal" href="lecture08/probability-urn-example-sum-rule.html">
      Example - Drawing balls from a box without replacement (sum rule)
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../lecture08/probability-urn-example-information-flow.html">
+    <a class="reference internal" href="lecture08/probability-urn-example-information-flow.html">
      Example - Drawing balls from a box without replacement (information flow)
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../lecture08/homework_08.html">
+    <a class="reference internal" href="lecture08/homework_08.html">
      Homework 8
     </a>
    </li>
   </ul>
  </li>
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="intro.html">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="lecture09/intro.html">
    Lecture 9: Discrete random variables
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
   <label for="toctree-checkbox-9">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="current">
+  <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="discrete-random-variables.html">
+    <a class="reference internal" href="lecture09/discrete-random-variables.html">
      Discrete Random variables
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="probability-mass-function.html">
+    <a class="reference internal" href="lecture09/probability-mass-function.html">
      The probability mass function
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="the-bernoulli-distribution.html">
+    <a class="reference internal" href="lecture09/the-bernoulli-distribution.html">
      The Bernoulli distribution
     </a>
    </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+   <li class="toctree-l2">
+    <a class="reference internal" href="lecture09/properties-of-the-probability-mass-function.html">
      Properties of the probability mass function
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="the-categorical-distribution.html">
+    <a class="reference internal" href="lecture09/the-categorical-distribution.html">
      The Categorical distribution
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="the-binomial-distribution.html">
+    <a class="reference internal" href="lecture09/the-binomial-distribution.html">
      The Binomial Distribution
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="the-poisson-distribution.html">
+    <a class="reference internal" href="lecture09/the-poisson-distribution.html">
      The Poisson distribution
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="homework_09.html">
+    <a class="reference internal" href="lecture09/homework_09.html">
      Homework 9
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../lecture10/intro.html">
+  <a class="reference internal" href="lecture10/intro.html">
    Lecture 10: Continuous random variables
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
@@ -459,39 +455,39 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../lecture10/continuous-random-variables.html">
+    <a class="reference internal" href="lecture10/continuous-random-variables.html">
      Continuous random variables
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../lecture10/example-manufacturing-steel-balls.html">
+    <a class="reference internal" href="lecture10/example-manufacturing-steel-balls.html">
      Example: Uncertainties in steel ball manufacturing
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../lecture10/cumulative-distribution-function.html">
+    <a class="reference internal" href="lecture10/cumulative-distribution-function.html">
      The cumulative distribution function
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../lecture10/probability-density-function.html">
+    <a class="reference internal" href="lecture10/probability-density-function.html">
      The probability density function
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../lecture10/the-uniform-distribution.html">
+    <a class="reference internal" href="lecture10/the-uniform-distribution.html">
      The uniform distribution
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../lecture10/homework_10.html">
+    <a class="reference internal" href="lecture10/homework_10.html">
      Homework 10
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../lecture11/intro.html">
+  <a class="reference internal" href="lecture11/intro.html">
    Lecture 11: Expectations, variances, and their properties
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
@@ -501,54 +497,54 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../lecture11/expectation-discrete-rv.html">
+    <a class="reference internal" href="lecture11/expectation-discrete-rv.html">
      Expectation of discrete random variables
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../lecture11/examples-expectation-of-discrete-rvs.html">
+    <a class="reference internal" href="lecture11/examples-expectation-of-discrete-rvs.html">
      Examples of expectations of discrete random variables
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../lecture11/expectation-continuous-rv.html">
+    <a class="reference internal" href="lecture11/expectation-continuous-rv.html">
      Expectation of a continuous random variable
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../lecture11/expectation-notation.html">
+    <a class="reference internal" href="lecture11/expectation-notation.html">
      Simplifying our notation about expectations
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../lecture11/properties-of-expectations.html">
+    <a class="reference internal" href="lecture11/properties-of-expectations.html">
      Properties of expectations
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../lecture11/variance.html">
+    <a class="reference internal" href="lecture11/variance.html">
      Variance of a random variable
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../lecture11/properties-of-variance.html">
+    <a class="reference internal" href="lecture11/properties-of-variance.html">
      Properties of variance
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../lecture11/examples-variance.html">
+    <a class="reference internal" href="lecture11/examples-variance.html">
      Examples of variances of random variables
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../lecture11/homework_11.html">
+    <a class="reference internal" href="lecture11/homework_11.html">
      Homework 11
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../lecture12/intro.html">
+  <a class="reference internal" href="lecture12/intro.html">
    Lecture 12: The Normal distribution, quantiles, and credible intervals
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
@@ -558,39 +554,39 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../lecture12/the-standard-normal.html">
+    <a class="reference internal" href="lecture12/the-standard-normal.html">
      The standard Normal distribution
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../lecture12/standard-normal-quantiles.html">
+    <a class="reference internal" href="lecture12/standard-normal-quantiles.html">
      Quantiles of the standard Normal
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../lecture12/the-normal.html">
+    <a class="reference internal" href="lecture12/the-normal.html">
      The Normal distribution
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../lecture12/normal-quantiles.html">
+    <a class="reference internal" href="lecture12/normal-quantiles.html">
      Quantiles of the Normal
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../lecture12/example-fitting-normals.html">
+    <a class="reference internal" href="lecture12/example-fitting-normals.html">
      Fitting Normal distributions to data
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../lecture12/homework_12.html">
+    <a class="reference internal" href="lecture12/homework_12.html">
      Homework 12
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../lecture13/intro.html">
+  <a class="reference internal" href="lecture13/intro.html">
    Lecture 13: Fitting models with the principle of maximum likelihood
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
@@ -600,44 +596,44 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../lecture13/joint-probability-density-function.html">
+    <a class="reference internal" href="lecture13/joint-probability-density-function.html">
      The joint probability density function
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../lecture13/repeated-experiments.html">
+    <a class="reference internal" href="lecture13/repeated-experiments.html">
      Repeated independent experiments
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../lecture13/the-maximum-likelihood-principle.html">
+    <a class="reference internal" href="lecture13/the-maximum-likelihood-principle.html">
      The maximum likelihood principle
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../lecture13/fitting-the-normal-with-maximum-likelihood.html">
+    <a class="reference internal" href="lecture13/fitting-the-normal-with-maximum-likelihood.html">
      Fitting the parameters of a Normal using the maximum likelihood principle
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../lecture13/fitting-the-bernoulli.html">
+    <a class="reference internal" href="lecture13/fitting-the-bernoulli.html">
      Fitting the Bernoulli with maximum likelihood
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../lecture13/predictive-checking.html">
+    <a class="reference internal" href="lecture13/predictive-checking.html">
      Predictive checking
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../lecture13/homework_13.html">
+    <a class="reference internal" href="lecture13/homework_13.html">
      Homework 13
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../lecture14/intro.html">
+  <a class="reference internal" href="lecture14/intro.html">
    Lecture 14: Covariance, correlation, and linear regression with one variable
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
@@ -647,39 +643,39 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../lecture14/covariance.html">
+    <a class="reference internal" href="lecture14/covariance.html">
      Covariance between two random variables
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../lecture14/correlation.html">
+    <a class="reference internal" href="lecture14/correlation.html">
      Correlation between two random variables
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../lecture14/correlation-is-not-causation.html">
+    <a class="reference internal" href="lecture14/correlation-is-not-causation.html">
      Correlation is not causation
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../lecture14/uncorrelated-does-not-imply-independent.html">
+    <a class="reference internal" href="lecture14/uncorrelated-does-not-imply-independent.html">
      Two uncorrelated random variables are not necessarily independent
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../lecture14/linear-regression-with-one-variable.html">
+    <a class="reference internal" href="lecture14/linear-regression-with-one-variable.html">
      Linear regression with one variable
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../lecture14/homework_14.html">
+    <a class="reference internal" href="lecture14/homework_14.html">
      Homework 14
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../lecture15/intro.html">
+  <a class="reference internal" href="lecture15/intro.html">
    Lecture 15: Linear regression
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
@@ -689,54 +685,54 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../lecture15/regression-with-one-variable-revisited.html">
+    <a class="reference internal" href="lecture15/regression-with-one-variable-revisited.html">
      Regression with one variable revisited
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../lecture15/example-linear-regression.html">
+    <a class="reference internal" href="lecture15/example-linear-regression.html">
      Example: Linear regression with a single variable
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../lecture15/polynomial-regression.html">
+    <a class="reference internal" href="lecture15/polynomial-regression.html">
      Polynomial Regression
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../lecture15/the-generalized-linear-model.html">
+    <a class="reference internal" href="lecture15/the-generalized-linear-model.html">
      The generalized linear model
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../lecture15/regression-diagnostics.html">
+    <a class="reference internal" href="lecture15/regression-diagnostics.html">
      Measures of Predictive Accuracy
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../lecture15/cross-validation.html">
+    <a class="reference internal" href="lecture15/cross-validation.html">
      Cross validation for selecting the number of basis functions
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../lecture15/maximum-likelihood-interpretation.html">
+    <a class="reference internal" href="lecture15/maximum-likelihood-interpretation.html">
      Maximum likelihood interpretation of least squares
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../lecture15/maximum-likelihood-example.html">
+    <a class="reference internal" href="lecture15/maximum-likelihood-example.html">
      Example: Regression with estimated measurement noise
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../lecture15/homework_15.html">
+    <a class="reference internal" href="lecture15/homework_15.html">
      Homework 15
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../lecture16/intro.html">
+  <a class="reference internal" href="lecture16/intro.html">
    Lecture 16: Classification via logistic regression
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
@@ -746,34 +742,34 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../lecture16/logistic-regression.html">
+    <a class="reference internal" href="lecture16/logistic-regression.html">
      Logistic regression
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../lecture16/example-logistic-regression-one-variable.html">
+    <a class="reference internal" href="lecture16/example-logistic-regression-one-variable.html">
      Example: Logistic regression with one variable (High melting explosives)
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../lecture16/example-logistic-regression-many-features.html">
+    <a class="reference internal" href="lecture16/example-logistic-regression-many-features.html">
      Logistic regression with many features
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../lecture16/classification-diagnostics.html">
+    <a class="reference internal" href="lecture16/classification-diagnostics.html">
      Diagnostics for Classification
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../lecture16/homework_16.html">
+    <a class="reference internal" href="lecture16/homework_16.html">
      Homework 16
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../bibliography.html">
+  <a class="reference internal" href="bibliography.html">
    Bibliography
   </a>
  </li>
@@ -818,7 +814,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/lecture09/properties-of-the-probability-mass-function.md"><button type="button"
+        <a class="dropdown-buttons" href="_sources/README.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -851,42 +847,14 @@
         
               <div>
                 
-  <div class="section" id="properties-of-the-probability-mass-function">
-<span id="lecture09-properties-of-the-probability-mass-function"></span><h1>Properties of the probability mass function<a class="headerlink" href="#properties-of-the-probability-mass-function" title="Permalink to this headline">¶</a></h1>
-<p>There are some standard properties of the probability mass function that are worth memorizing.</p>
-<p>First, he probability mass function is nonnegative:</p>
-<div class="math notranslate nohighlight">
-\[
-p(x) \ge 0,
-\]</div>
-<p>for the possible values <span class="math notranslate nohighlight">\(x\)</span> that the random variable <span class="math notranslate nohighlight">\(X\)</span> can take.</p>
-<p>Second, the probability mass function is normalized:</p>
-<div class="math notranslate nohighlight">
-\[
-\sum_x p(x) = 1.
-\]</div>
-<p>The sum is over all the possible values of <span class="math notranslate nohighlight">\(X\)</span>.
-This is a direct consequence of the fact that <span class="math notranslate nohighlight">\(X\)</span> must take some value of
-all that are possible.</p>
-<p>Finally, you can use the probability mass function to find the probability that
-<span class="math notranslate nohighlight">\(X\)</span> takes values in any set of possibilities.
-For example:</p>
-<div class="math notranslate nohighlight">
-\[
-p(X=x_1\;\text{or}\;X=x_2) = p(x_1) + p(x_2),
-\]</div>
-<p>if <span class="math notranslate nohighlight">\(x_1\not= x_2\)</span>.</p>
-<p>Similarly, if <span class="math notranslate nohighlight">\(x_1, x_2,\)</span> and <span class="math notranslate nohighlight">\(x_3\)</span> are all different, then:</p>
-<div class="math notranslate nohighlight">
-\[
-p(X=x_1\;\text{or}\;X=x_2\;\text{or}\;X=x_3) = p(x_1) + p(x_2) + p(x_3).
-\]</div>
-<p>An, in general for any set of possible values of <span class="math notranslate nohighlight">\(X\)</span>, say <span class="math notranslate nohighlight">\(A\)</span>, the probability
-of <span class="math notranslate nohighlight">\(X\)</span> taking values in <span class="math notranslate nohighlight">\(A\)</span> is:</p>
-<div class="math notranslate nohighlight">
-\[
-p(X\in A) = \sum_{x\in A} p(x).
-\]</div>
+  <div class="section" id="me-297-intro-to-data-science">
+<h1>me-297-intro-to-data-science<a class="headerlink" href="#me-297-intro-to-data-science" title="Permalink to this headline">¶</a></h1>
+<p>Introduction to Data Science for Mechanical Engineers</p>
+<p>This is the source code of the online textbook of a one-credit undergradate course on data science developped by Prof. Bilionis (<a class="reference external" href="http://www.predictivesciencelab.org">www.predictivesciencelab.org</a>).
+The textbook is in the form of a <a class="reference external" href="https://jupyterbook.org/intro.html">Jupyter Book</a>.</p>
+<p>The html version of the book can be accessed in <a class="reference external" href="https://purduemechanicalengineering.github.io/me-297-intro-to-data-science/index.html">this link</a>.</p>
+<p>During Fall 2021, the class meets every Wednesday on 2:30 pm at ME 1009.</p>
+<p>You can get the syllabus <a class="reference external" href="https://www.dropbox.com/s/6uki3liiidyfzsx/F21%20-%20ME%20297%20Syllabus.pdf?dl=0">here</a>.</p>
 </div>
 
     <script type="text/x-thebe-config">
@@ -902,7 +870,7 @@ p(X\in A) = \sum_{x\in A} p(x).
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./lecture09"
+            path: "./."
         },
         predefinedOutput: true
     }
@@ -914,8 +882,6 @@ p(X\in A) = \sum_{x\in A} p(x).
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="the-bernoulli-distribution.html" title="previous page">The Bernoulli distribution</a>
-    <a class='right-next' id="next-link" href="the-categorical-distribution.html" title="next page">The Categorical distribution</a>
 
         </div>
         
@@ -937,7 +903,7 @@ p(X\in A) = \sum_{x\in A} p(x).
       </div>
     </div>
   
-  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
 
   
   </body>

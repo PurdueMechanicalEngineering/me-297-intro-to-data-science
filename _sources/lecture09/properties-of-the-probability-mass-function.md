@@ -39,6 +39,7 @@ $$
 
 An, in general for any set of possible values of $X$, say $A$, the probability
 of $X$ taking values in $A$ is:
+
 $$
 p(X\in A) = \sum_{x\in A} p(x).
 $$
