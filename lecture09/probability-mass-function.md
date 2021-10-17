@@ -5,7 +5,7 @@
 Say that $X$ is the result of a coin toss experiment.
 As we have already discussed with can code the result of the experiment with
 natural numbers.
-Here we use 0 for "heads" and 1 for "tails".
+Here we use 0 for "heads" and 1 for "tails."
 If we have a fair coin, we know that $X$ takes the value $0$ with probability
 $0.5$ and the value $1$ also with probability $0.5$.
 We can write this succinctly as:
