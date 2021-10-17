@@ -56,6 +56,7 @@ Similarly, we can find the probability that we draw a red ball in the second dra
 + We had 10 balls, 6 red and 4 blue.
 + Since $R_1$ is true (the first ball is red), we now have 5 red and 4 blue balls.
 + Therefore, the probability that we draw a red ball next is:
+
 $$
 p(R_2|R_1,I) = \frac{5}{9}.
 $$
