@@ -19,7 +19,7 @@ We will build these concepts gradually.
 
 ## Questions
 
-Which of the following experiments can be modeled with a continuous random variables (True/False):
+Which of the following experiments can be modeled with a continuous random variable (True/False):
 
 + Drawing two cards at random from a well-shuffled deck.
 + Weighing a piece of steel.

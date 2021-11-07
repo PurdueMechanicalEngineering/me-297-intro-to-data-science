@@ -19,7 +19,7 @@ ball (assuming they are perfectly spherical - they are not).
 
 Assume that we know that the balls have a diameter that is greater than 0.95 mm
 and smaller than 1.05 mm.
-What short of random variable should we assign to the diameter?
+What sort of random variable should we assign to the diameter?
 Let's call this random variable $X$.
 We know a few things right away about it.
 First, $X$ cannot be smaller than 0.95 mm.
